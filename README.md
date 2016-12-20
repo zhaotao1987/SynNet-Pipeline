@@ -1,16 +1,16 @@
-<p><strong>Plant Synteny Network Construction and Analysis Pipeline</strong></p>
-<p><strong>&nbsp;</strong></p>
+<h3 style="text-align: center;"><strong>Plant Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p>Microsynteny network construction consists of three primary steps: (1) Genome data preparation, (2) pairwise whole-genome comparison, (3) syntenic blocks detection, and (4) network manipulation.</p>
 <p><strong>Genome data preparation</strong></p>
 <p>Sequenced plant genomes can be downloaded from Phytozome, NCBI, Plaza, CoGe, etc.</p>
-<p>Phytozome: <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11</a></p>
+<p>Phytozome:</p>
+<p><a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11</a></p>
 <p>NCBI:</p>
 <p><a href="https://www.ncbi.nlm.nih.gov/genome/browse/">https://www.ncbi.nlm.nih.gov/genome/browse/</a></p>
 <p>Plaza:</p>
 <p><a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index</a></p>
 <p>CoGe:</p>
 <p><a href="https://genomevolution.org/coge/OrganismView.pl">https://genomevolution.org/coge/OrganismView.pl</a></p>
-<p>Notes:</p>
+<p>Tips:</p>
 <ol>
 <li>A Fasta file contained all peptides and a GFF file indicating all gene positions are needed for each genome.</li>
 <li>Fd</li>
