@@ -1,35 +1,58 @@
-<h3 style="text-align: center;"><strong>Plant Synteny Network Construction and Analysis Pipeline</strong></h3>
-<p>Microsynteny network construction consists of three primary steps: (1) Genome data preparation, (2) pairwise whole-genome comparison, (3) syntenic blocks detection, and (4) network manipulation.</p>
+<p><strong>Plant Synteny Network Construction and Analysis Pipeline</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Synteny network construction consists of three primary steps: (1) Genome data preparation, (2) pairwise whole-genome comparison, (3) syntenic blocks detection and data merge, and (4) network manipulation.</p>
 <p><strong>Genome data preparation</strong></p>
-<p>Sequenced plant genomes can be downloaded from Phytozome, NCBI, Plaza, CoGe, etc.</p>
-<p>Phytozome:</p>
-<p><a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11</a></p>
-<p>NCBI:</p>
-<p><a href="https://www.ncbi.nlm.nih.gov/genome/browse/">https://www.ncbi.nlm.nih.gov/genome/browse/</a></p>
-<p>Plaza:</p>
-<p><a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index</a></p>
-<p>CoGe:</p>
-<p><a href="https://genomevolution.org/coge/OrganismView.pl">https://genomevolution.org/coge/OrganismView.pl</a></p>
+<p>Genomes from any kingdoms (i.e. plants, animals, bacterial, et al.) can be used for synteny network construction. Plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc.</p>
 <p>Tips:</p>
 <ol>
-<li>A Fasta file contained all peptides and a GFF file indicating all gene positions are needed for each genome.</li>
-<li>Fd</li>
+<li>A Fasta file contained all peptides and a GFF/BED file indicating all gene positions are required for each genome.</li>
+<li>For each gene, gene names should be identical in the Fasta file and GFF/BED files.</li>
+<li>If necessary, modify the gene names to simple and concise strings. Use unique three-letter codes to indicate species, for example for <em>Arabidopsis thaliana</em>, use &ldquo;ath_&rdquo; as the prefix of any <em>Arabidopsis thaliana</em> genes in the genome, such as &ldquo;ath_AT4G25470&rdquo;. Avoid long function annotations in gene names.</li>
+<li>Depends on the question on hand, you can use any set of genomes for synteny network construction. For example, use all available Brassicaceae species for a lineage-wide comparison, or more species in eudicots and monocots for a larger evolutionary</li>
+<li></li>
 </ol>
-<p>When all</p>
-<p><strong>Pairwise whole-genome comparison</strong></p>
-<p>For example, for a comparison of five plant genomes you would need to perform P (5, 2) + 5 = 25x whole genome all-against-all comparisons, because for each pair of syntenic block reciprocal comparisons are needed and also intra-species comparisons are needed to identify paralogs or &ldquo;syntenic ohnologs pairs&rdquo;.</p>
-<p>Recommended tools:</p>
-<p>BLAST+</p>
-<p><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</a></p>
-<p>LASTZ</p>
-<p><a href="http://www.bx.psu.edu/miller_lab/dist/README.lastz-1.02.00/README.lastz-1.02.00a.html">http://www.bx.psu.edu/miller_lab/dist/README.lastz-1.02.00/README.lastz-1.02.00a.html</a></p>
-<p>RAPSearch2</p>
-<p><a href="http://rapsearch2.sourceforge.net/">http://rapsearch2.sourceforge.net/</a></p>
-<p><strong>Syntenic blocks detection</strong></p>
-<p>MCScanX</p>
-<p><a href="http://chibba.pgml.uga.edu/mcscan2/">http://chibba.pgml.uga.edu/mcscan2/</a></p>
+<p>Pre-processed plant genomes are available here:</p>
+<table>
+<tbody>
+<tr>
+<td width="129">
+<p>Species</p>
+</td>
+<td width="110">
+<p>Version</p>
+</td>
+<td width="133">
+<p>Genome peptides</p>
+</td>
+<td width="123">
+<p>Genome cds</p>
+</td>
+<td width="157">
+<p>Gene position/GFF</p>
+</td>
+<td width="128">
+<p>Reference</p>
+</td>
+</tr>
+<tr>
+<td width="129">
 <p>&nbsp;</p>
+</td>
+<td width="110">
 <p>&nbsp;</p>
-<p><strong>&nbsp;</strong></p>
-<p><strong>&nbsp;</strong></p>
+</td>
+<td width="133">
 <p>&nbsp;</p>
+</td>
+<td width="123">
+<p>&nbsp;</p>
+</td>
+<td width="157">
+<p>&nbsp;</p>
+</td>
+<td width="128">
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
