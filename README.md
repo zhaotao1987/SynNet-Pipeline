@@ -2380,7 +2380,7 @@
 <p>Tips:</p>
 <ol>
 <li>A script is provided to do Step 2 and Step 3 automatically. RAPSearch2 was used for whole genome comparisons, and MCScanX for synteny detection. You need to install this two programs beforehand and customize the corresponding path.</li>
-<li>Pre-calculated synteny network database for the above 101 plants can be <a href="10.85.9.0/101TotalPlant4cols">downloaded</a> here (~ 1.6 GB). The file contains four columns: &ldquo;Synteny_Block_ID&rdquo;, &ldquo;Gene1&rdquo;, &ldquo;Gene2&rdquo;, and &ldquo;Block_Score&rdquo;. Among them, &ldquo;Gene1&rdquo; and &ldquo;Gene2&rdquo; are syntenic gene pairs across all species, which are the data source for the edge table for networks.</li>
+<li>Pre-calculated synteny network database for the above 101 plants can be <a href="http://10.85.9.0/101TotalPlant4cols">downloaded</a> here (~ 1.6 GB). The file contains four columns: &ldquo;Synteny_Block_ID&rdquo;, &ldquo;Gene1&rdquo;, &ldquo;Gene2&rdquo;, and &ldquo;Block_Score&rdquo;. Among them, &ldquo;Gene1&rdquo; and &ldquo;Gene2&rdquo; are syntenic gene pairs across all species, which are the data source for the edge table for networks.</li>
 </ol>
 <p>&nbsp;</p>
 <ol start="4">
@@ -2399,4 +2399,5 @@
 <p>&nbsp;</p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
