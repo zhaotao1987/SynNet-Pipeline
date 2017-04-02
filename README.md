@@ -1,67 +1,50 @@
 <p><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></p>
 <p><strong>&nbsp;</strong></p>
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
-<p>For Step 1, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction.</p>
+<p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
 <p><u>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1). </u></p>
-<p>For Steps 2 and 3, we provide a bash script (SynNet.sh) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
+<p>For <strong>Steps 2 and 3</strong>, we provide a bash script (<u>SynNet.sh</u>) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
 <ul>
-<li>Users have to pre-install <a href="http://rapsearch2.sourceforge.net/">RAPSearch2</a> (for fast whole genome comparisons, much faster that BLAST) and <a href="http://chibba.pgml.uga.edu/mcscan2/">MCScanX</a> (for synteny detection), and make changes to the working path according to your installation in the bash script. For example, what kinds of changes?</li>
+<li>Users have to pre-install <a href="http://rapsearch2.sourceforge.net/">RAPSearch2</a> (BLAST-like program, but much faster) and <a href="http://chibba.pgml.uga.edu/mcscan2/">MCScanX</a> (for pairwise synteny block detection).</li>
 <li>Put all required genome files and the bash script in the same directory. Then, alter the first line of the program, which is a bracket containing species abbreviations (which are consistent to the names used in the genome files, tab separated).</li>
+<li>Run the program and get the result file called &ldquo;Final_Network&rdquo;, which contains all pairwise synteny blocks of your input species.</li>
 </ul>
 <p><u>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017 are available for download </u>(&ldquo;<a href="http://10.85.9.0/51_Genomes_Blocks">51_Genomes_Blocks</a>&rdquo;).</p>
-<p>At Step 4, for specific gene family studies you may need to extract sub-networks from the database. To do this, you need to first identify all gene family members from the genomes and then query this gene candidate list against the synteny block database.</p>
+<p>At <strong>Step 4</strong>, for specific gene family studies you may need to extract sub-networks from the database. To do this, you need to first identify all gene family members from the genomes and then query this gene candidate list against the synteny block database.</p>
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
 </ul>
-<p><strong>Brief guidelines:</strong></p>
-<p>Install HMMER followed the instructions at: <a href="http://hmmer.org/documentation.html">http://hmmer.org/documentation.html</a></p>
-<p>Download the protein sequence alignment for PF00319 in Stockholm format (default name : &ldquo;PF00319_seed.txt&rdquo;):&nbsp; <a href="http://pfam.xfam.org/family/PF00319#tabview=tab3">http://pfam.xfam.org/family/PF00319#tabview=tab3</a></p>
-<p>Hmmbuild: to make a model from the alignment</p>
-<p>Usage: <strong>hmmbuild</strong> [-options] &lt;hmmfile output&gt; &lt;alignment file input&gt;</p>
-<p>Example: hmmbuild MADS.hmm PF00319_seed.txt</p>
-<p>MADS.hmm is the output model for characterizing MADS-box genes.</p>
-<p>Hmmsearch: to identify all candidate members from the peptide database.</p>
-<p>Usage: <strong>hmmsearch</strong> [options] &lt;query hmmfile&gt; &lt;target seqfile&gt;</p>
-<p>Example: hmmsearch MADS.hmm 51_Genomes_Peps &gt; MADS_Results</p>
-<p><u>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download </u>(&ldquo;<a href="http://10.85.9.0/51_Genomes_Peps">51_Genomes_Peps</a>&rdquo;).</p>
+<p><strong>Brief Guidelines of HMMER Usage:</strong></p>
+<ul>
+<li>Install HMMER followed the instructions at: <a href="http://hmmer.org/documentation.html">http://hmmer.org/documentation.html</a></li>
+<li>Download the protein sequence alignment for PF00319 in Stockholm format (default name : &ldquo;PF00319_seed.txt&rdquo;): <a href="http://pfam.xfam.org/family/PF00319#tabview=tab3">http://pfam.xfam.org/family/PF00319#tabview=tab3</a></li>
+<li>Hmmbuild: to make a model from the alignment
+<ul>
+<li>Usage: <strong>hmmbuild</strong> [-options] &lt;hmmfile output&gt; &lt;alignment file input&gt;</li>
+<li>Example: hmmbuild MADS.hmm PF00319_seed.txt</li>
+<li>hmm is the output model for characterizing MADS-box genes.</li>
+</ul>
+</li>
+<li>Hmmsearch: to identify all candidate members from the peptide database.
+<ul>
+<li>Usage: <strong>hmmsearch</strong> [options] &lt;query hmmfile&gt; &lt;target seqfile&gt;</li>
+<li>Example: hmmsearch MADS.hmm 51_Genomes_Peps &gt; MADS_Results</li>
+</ul>
+</li>
+</ul>
+<p><u>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;</u>(&ldquo;<a href="http://10.85.9.0/51_Genomes_Peps">51_Genomes_Peps</a>&rdquo;).</p>
 <p><u>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;</u><a href="http://10.85.9.0/MADS_list">MADS_list</a><u>&rdquo;)</u></p>
 <ul>
-<li>Extract subnetwork from the synteny network database as needed.</li>
-</ul>
-<p>Command: &nbsp;grep -f MADS_list 51_Genomes_Blocks &gt; MADS.SynNet</p>
-<ul>
+<li>Extract subnetwork from the synteny network database as needed, using a list containing all HMMER-identified family members.</li>
+<li>Command: grep -f MADS_list 51_Genomes_Blocks &gt; MADS.SynNet</li>
 <li>Now we obtain all syntenic relationships for all MADS-box genes.</li>
 </ul>
-<p>&gt;&gt;&gt; <a href="http://10.85.9.0/MADS.SynNet">MADS.SynNet</a></p>
-<p>Step 5:</p>
-<ul>
-<li>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization depending on the tools used. This can be done in multiple ways, we list several tools here.</li>
-</ul>
-<p>For programmatic analysis and clustering networks:</p>
-<p>R package: <a href="http://igraph.org/">igraph</a></p>
-<p>C++ or python packages: <a href="https://networkx.github.io/">NetworkX</a>, <a href="http://snap.stanford.edu/">SNAP</a>, <a href="http://igraph.org/python/">python-igraph</a></p>
-<p>For GUI style operations:</p>
-<p>&nbsp;<a href="http://www.cfinder.org/">CFinder</a></p>
-<p><a href="http://www.cytoscape.org/">Cytoscape</a></p>
-<p><a href="https://gephi.org/">Gephi</a></p>
-<ul>
-<li><u>Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape </u>(<a href="http://10.85.9.0/MADS.cytoscape">cytoscape</a>)</li>
-</ul>
-<p><u>&nbsp;</u></p>
-<p><u>&nbsp;</u></p>
-<p><a href="https://academic.oup.com/bioinformatics/article/22/8/1021/227298/CFinder-locating-cliques-and-overlapping-modules">https://academic.oup.com/bioinformatics/article/22/8/1021/227298/CFinder-locating-cliques-and-overlapping-modules</a></p>
-<p><u>&nbsp;</u></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p><u>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (</u><a href="http://10.85.9.0/MADS.SynNet">MADS.SynNet</a>)</p>
+<p><strong>Step 5</strong>:</p>
+<p>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization, which can be performed in different ways.</p>
+<p>Clustering algorithms: K-clique percolation (e.g., <a href="http://www.cfinder.org/">CFinder</a>, <a href="http://snap.stanford.edu/">SNAP</a>), Infomap, CNM, k-core decomposition, etc.</p>
+<p>Visualization tools:&nbsp; <a href="http://www.cytoscape.org/">Cytoscape</a>, <a href="https://gephi.org/">Gephi</a> et al.</p>
+<p><u>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape </u>(<a href="http://10.85.9.0/MADS.cytoscape">MADS.cytoscape</a>)</p>
 <p>&nbsp;</p>
 <p>Table 1: Genomes Used in the study of Tao Zhao et al., 2017</p>
 <table>
