@@ -33,18 +33,18 @@
 </li>
 </ul>
 <p>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;(&ldquo;<a href="http://10.85.9.0/51_GENOMES_PEP.gz">51_Genomes_Peps</a>&rdquo;).</p>
-<p>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;<a href="http://10.85.9.0/MADS_list">MADS_list</a>&rdquo;)</p>
+<p>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;<a href="http://10.85.9.0/mads_list">MADS_list</a>&rdquo;)</p>
 <ul>
 <li>Extract subnetwork from the synteny network database as needed, using a list containing all HMMER-identified family members.</li>
 <li>Command: grep -f MADS_list 51_Genomes_Blocks &gt; MADS.SynNet</li>
 <li>Now we obtain all syntenic relationships for all MADS-box genes.</li>
 </ul>
-<p>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (<a href="http://10.85.9.0/MADS.SynNet">MADS.SynNet</a>)</p>
+<p>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (<a href="http://10.85.9.0/mads.synnet">MADS.SynNet</a>)</p>
 <p><strong>Step 5</strong>:</p>
 <p>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization, which can be performed in different ways.</p>
 <p>Clustering algorithms: K-clique percolation (e.g., <a href="http://www.cfinder.org/">CFinder</a>, <a href="http://snap.stanford.edu/">SNAP</a>), Infomap, CNM, k-core decomposition, etc.</p>
 <p>Visualization tools:&nbsp; <a href="http://www.cytoscape.org/">Cytoscape</a>, <a href="https://gephi.org/">Gephi</a> et al.</p>
-<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/MADS.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
+<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/mads.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
 <p>&nbsp;</p>
 <p>Table 1: Genomes Used in the study of Tao Zhao et al., 2017</p>
 <table width="915">
