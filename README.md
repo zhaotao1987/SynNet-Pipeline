@@ -2,14 +2,14 @@
 <p><strong>&nbsp;</strong></p>
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
-<p><u>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1). </u></p>
+<p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1).</p>
 <p>For <strong>Steps 2 and 3</strong>, we provide a bash script (<u>SynNet.sh</u>) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
 <ul>
 <li>Users have to pre-install <a href="http://rapsearch2.sourceforge.net/">RAPSearch2</a> (BLAST-like program, but much faster) and <a href="http://chibba.pgml.uga.edu/mcscan2/">MCScanX</a> (for pairwise synteny block detection).</li>
 <li>Put all required genome files and the bash script in the same directory. Then, alter the first line of the program, which is a bracket containing species abbreviations (which are consistent to the names used in the genome files, tab separated).</li>
 <li>Run the program and get the result file called &ldquo;Final_Network&rdquo;, which contains all pairwise synteny blocks of your input species.</li>
 </ul>
-<p><u>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017 are available for download </u>(&ldquo;<a href="http://10.85.9.0/51_Genomes_Blocks">51_Genomes_Blocks</a>&rdquo;).</p>
+<p>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017 are available for download (&ldquo;<a href="http://10.85.9.0/51_Genomes_Blocks">51_Genomes_Blocks</a>&rdquo;).</p>
 <p>At <strong>Step 4</strong>, for specific gene family studies you may need to extract sub-networks from the database. To do this, you need to first identify all gene family members from the genomes and then query this gene candidate list against the synteny block database.</p>
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
@@ -32,64 +32,64 @@
 </ul>
 </li>
 </ul>
-<p><u>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;</u>(&ldquo;<a href="http://10.85.9.0/51_Genomes_Peps">51_Genomes_Peps</a>&rdquo;).</p>
-<p><u>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;</u><a href="http://10.85.9.0/MADS_list">MADS_list</a><u>&rdquo;)</u></p>
+<p>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;(&ldquo;<a href="http://10.85.9.0/51_Genomes_Peps">51_Genomes_Peps</a>&rdquo;).</p>
+<p>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;<a href="http://10.85.9.0/MADS_list">MADS_list</a>&rdquo;)</p>
 <ul>
 <li>Extract subnetwork from the synteny network database as needed, using a list containing all HMMER-identified family members.</li>
 <li>Command: grep -f MADS_list 51_Genomes_Blocks &gt; MADS.SynNet</li>
 <li>Now we obtain all syntenic relationships for all MADS-box genes.</li>
 </ul>
-<p><u>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (</u><a href="http://10.85.9.0/MADS.SynNet">MADS.SynNet</a>)</p>
+<p>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (<a href="http://10.85.9.0/MADS.SynNet">MADS.SynNet</a>)</p>
 <p><strong>Step 5</strong>:</p>
 <p>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization, which can be performed in different ways.</p>
 <p>Clustering algorithms: K-clique percolation (e.g., <a href="http://www.cfinder.org/">CFinder</a>, <a href="http://snap.stanford.edu/">SNAP</a>), Infomap, CNM, k-core decomposition, etc.</p>
 <p>Visualization tools:&nbsp; <a href="http://www.cytoscape.org/">Cytoscape</a>, <a href="https://gephi.org/">Gephi</a> et al.</p>
-<p><u>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape </u>(<a href="http://10.85.9.0/MADS.cytoscape">MADS.cytoscape</a>)</p>
+<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/MADS.cytoscape">MADS.cytoscape</a>), Cytoscape version 3.4.0.</p>
 <p>&nbsp;</p>
 <p>Table 1: Genomes Used in the study of Tao Zhao et al., 2017</p>
-<table>
+<table width="915">
 <tbody>
 <tr>
 <td width="53">
-<p>No</p>
+<p><strong>No</strong></p>
 </td>
 <td width="144">
-<p>Species</p>
+<p><strong>Species</strong></p>
 </td>
-<td width="119">
-<p>Order</p>
+<td width="103">
+<p><strong>Order</strong></p>
 </td>
-<td width="108">
-<p>Peptides</p>
+<td width="120">
+<p><strong>Peptides</strong></p>
 </td>
 <td width="107">
-<p>BED/GFF</p>
+<p><strong>BED/GFF</strong></p>
 </td>
 <td width="113">
-<p>Version</p>
+<p><strong>Version</strong></p>
 </td>
 <td width="114">
-<p>#Genes</p>
+<p><strong>#Genes</strong></p>
 </td>
 <td width="162">
-<p>Reference</p>
+<p><strong>Reference</strong></p>
 </td>
 </tr>
 <tr>
 <td width="53">
-<p><em>1</em></p>
+<p><strong>1</strong></p>
 </td>
 <td width="144">
 <p><em>Phaseolus vulgaris</em> (Common bean)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>pv.pep</u></p>
+<td width="120">
+<p>pv.pep</p>
 </td>
 <td width="107">
-<p><u>pv.bed</u></p>
+<p>pv.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -103,19 +103,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>2</em></p>
+<p><strong>2</strong></p>
 </td>
 <td width="144">
 <p><em>Glycine max</em> (Soybean)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>gm.pep</u></p>
+<td width="120">
+<p>gm.pep</p>
 </td>
 <td width="107">
-<p><u>gm.bed</u></p>
+<p>gm.bed</p>
 </td>
 <td width="113">
 <p>Wm82.a2.v1</p>
@@ -129,19 +129,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>3</em></p>
+<p><strong>3</strong></p>
 </td>
 <td width="144">
 <p><em>Cajanus cajan</em> (Pigeonpea)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>cc.pep</u></p>
+<td width="120">
+<p>cc.pep</p>
 </td>
 <td width="107">
-<p><u>cc.bed</u></p>
+<p>cc.bed</p>
 </td>
 <td width="113">
 <p>Nov_2011</p>
@@ -155,19 +155,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>4</em></p>
+<p><strong>4</strong></p>
 </td>
 <td width="144">
 <p><em>Medicago truncatula</em> (Barrel medic)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>mt.pep</u></p>
+<td width="120">
+<p>mt.pep</p>
 </td>
 <td width="107">
-<p><u>mt.bed</u></p>
+<p>mt.bed</p>
 </td>
 <td width="113">
 <p>Mt4.0v1</p>
@@ -181,19 +181,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>5</em></p>
+<p><strong>5</strong></p>
 </td>
 <td width="144">
 <p><em>Cicer arietinum</em> (Chickpea)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>ca.pep</u></p>
+<td width="120">
+<p>ca.pep</p>
 </td>
 <td width="107">
-<p><u>ca.bed</u></p>
+<p>ca.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -207,19 +207,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>6</em></p>
+<p><strong>6</strong></p>
 </td>
 <td width="144">
 <p><em>Lotus japonicus</em> (Lotus)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>lj.pep</u></p>
+<td width="120">
+<p>lj.pep</p>
 </td>
 <td width="107">
-<p><u>lj.bed</u></p>
+<p>lj.bed</p>
 </td>
 <td width="113">
 <p>Version 2.5</p>
@@ -233,19 +233,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>7</em></p>
+<p><strong>7</strong></p>
 </td>
 <td width="144">
 <p><em>Citrullus lanatus</em> (Watermelon)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>cl.pep</u></p>
+<td width="120">
+<p>cl.pep</p>
 </td>
 <td width="107">
-<p><u>cl.bed</u></p>
+<p>cl.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -259,19 +259,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>8</em></p>
+<p><strong>8</strong></p>
 </td>
 <td width="144">
 <p><em>Cucumis sativus</em> (Cucumber)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>cs.pep</u></p>
+<td width="120">
+<p>cs.pep</p>
 </td>
 <td width="107">
-<p><u>cs.bed</u></p>
+<p>cs.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -285,19 +285,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>9</em></p>
+<p><strong>9</strong></p>
 </td>
 <td width="144">
 <p><em>Populus trichocarpa</em> (Western poplar)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>pt.pep</u></p>
+<td width="120">
+<p>pt.pep</p>
 </td>
 <td width="107">
-<p><u>pt.bed</u></p>
+<p>pt.bed</p>
 </td>
 <td width="113">
 <p>Version 3.0</p>
@@ -311,19 +311,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>10</em></p>
+<p><strong>10</strong></p>
 </td>
 <td width="144">
 <p><em>Ricinus communis </em>(Castor bean)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>rc.pep</u></p>
+<td width="120">
+<p>rc.pep</p>
 </td>
 <td width="107">
-<p><u>rc.bed</u></p>
+<p>rc.bed</p>
 </td>
 <td width="113">
 <p>Version 0.1</p>
@@ -337,19 +337,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>11</em></p>
+<p><strong>11</strong></p>
 </td>
 <td width="144">
 <p><em>Malus x domestica</em> (Apple)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>md.pep</u></p>
+<td width="120">
+<p>md.pep</p>
 </td>
 <td width="107">
-<p><u>md.bed</u></p>
+<p>md.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -363,19 +363,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>12</em></p>
+<p><strong>12</strong></p>
 </td>
 <td width="144">
 <p><em>Pyrus x bretschneider</em>i (Pear)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>pb.pep</u></p>
+<td width="120">
+<p>pb.pep</p>
 </td>
 <td width="107">
-<p><u>pb.bed</u></p>
+<p>pb.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -389,19 +389,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>13</em></p>
+<p><strong>13</strong></p>
 </td>
 <td width="144">
 <p><em>Prunus persica</em> (Peach)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>pp.pep</u></p>
+<td width="120">
+<p>pp.pep</p>
 </td>
 <td width="107">
-<p><u>pp.bed</u></p>
+<p>pp.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -415,19 +415,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>14</em></p>
+<p><strong>14</strong></p>
 </td>
 <td width="144">
 <p><em>Prunus mum</em>e (Mei)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>pm.pep</u></p>
+<td width="120">
+<p>pm.pep</p>
 </td>
 <td width="107">
-<p><u>pm.bed</u></p>
+<p>pm.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -441,19 +441,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>15</em></p>
+<p><strong>15</strong></p>
 </td>
 <td width="144">
 <p>Fragaria vesca (Strawberry)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>fv.pep</u></p>
+<td width="120">
+<p>fv.pep</p>
 </td>
 <td width="107">
-<p><u>fv.bed</u></p>
+<p>fv.bed</p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -467,19 +467,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>16</em></p>
+<p><strong>16</strong></p>
 </td>
 <td width="144">
 <p><em>Arabidopsis thaliana</em> (Arabidopsis)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>at.pep</u></p>
+<td width="120">
+<p>at.pep</p>
 </td>
 <td width="107">
-<p><u>at.bed</u></p>
+<p>at.bed</p>
 </td>
 <td width="113">
 <p>TAIR10</p>
@@ -493,19 +493,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>17</em></p>
+<p><strong>17</strong></p>
 </td>
 <td width="144">
 <p><em>Arabidopsis lyrata</em> (Lyrate rockcress)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>al.pep</u></p>
+<td width="120">
+<p>al.pep</p>
 </td>
 <td width="107">
-<p><u>al.bed</u></p>
+<p>al.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -519,19 +519,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>18</em></p>
+<p><strong>18</strong></p>
 </td>
 <td width="144">
 <p><em>Capsella rubella </em>(Capsella)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>cb.pep</u></p>
+<td width="120">
+<p>cb.pep</p>
 </td>
 <td width="107">
-<p><u>cb.bed</u></p>
+<p>cb.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -545,19 +545,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>19</em></p>
+<p><strong>19</strong></p>
 </td>
 <td width="144">
 <p><em>Brassica oleracea</em> (Kale)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>bo.pep</u></p>
+<td width="120">
+<p>bo.pep</p>
 </td>
 <td width="107">
-<p><u>bo.bed</u></p>
+<p>bo.bed</p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -571,19 +571,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>20</em></p>
+<p><strong>20</strong></p>
 </td>
 <td width="144">
 <p><em>Brassica rapa</em> (Chinese cabbage)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>br.pep</u></p>
+<td width="120">
+<p>br.pep</p>
 </td>
 <td width="107">
-<p><u>br.bed</u></p>
+<p>br.bed</p>
 </td>
 <td width="113">
 <p>Version 1.3</p>
@@ -597,19 +597,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>21</em></p>
+<p><strong>21</strong></p>
 </td>
 <td width="144">
 <p>Aethionema</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>Aeth.pep</u></p>
+<td width="120">
+<p>Aeth.pep</p>
 </td>
 <td width="107">
-<p><u>Aeth.bed</u></p>
+<p>Aeth.bed</p>
 </td>
 <td width="113">
 <p>Version 2.5</p>
@@ -623,19 +623,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>22</em></p>
+<p><strong>22</strong></p>
 </td>
 <td width="144">
 <p>Tarenaya</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>tare.pep</u></p>
+<td width="120">
+<p>tare.pep</p>
 </td>
 <td width="107">
-<p><u>tare.bed</u></p>
+<p>tare.bed</p>
 </td>
 <td width="113">
 <p>Version 5</p>
@@ -649,19 +649,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>23</em></p>
+<p><strong>23</strong></p>
 </td>
 <td width="144">
 <p><em>Carica papaya</em> (Papaya)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>cp.pep</u></p>
+<td width="120">
+<p>cp.pep</p>
 </td>
 <td width="107">
-<p><u>cp.bed</u></p>
+<p>cp.bed</p>
 </td>
 <td width="113">
 <p>ASGPBv0.4</p>
@@ -675,19 +675,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>24</em></p>
+<p><strong>24</strong></p>
 </td>
 <td width="144">
 <p><em>Gossypium raimondii</em> (Cotton)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>gr.pep</u></p>
+<td width="120">
+<p>gr.pep</p>
 </td>
 <td width="107">
-<p><u>gr.bed</u></p>
+<p>gr.bed</p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -701,19 +701,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>25</em></p>
+<p><strong>25</strong></p>
 </td>
 <td width="144">
 <p><em>Theobroma cacao</em> (Cacao)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>ta.pep</u></p>
+<td width="120">
+<p>ta.pep</p>
 </td>
 <td width="107">
-<p><u>ta.bed</u></p>
+<p>ta.bed</p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -727,19 +727,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>26</em></p>
+<p><strong>26</strong></p>
 </td>
 <td width="144">
 <p><em>Citrus sinensis </em>(Sweet orange)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>ci.pep</u></p>
+<td width="120">
+<p>ci.pep</p>
 </td>
 <td width="107">
-<p><u>ci.bed</u></p>
+<p>ci.bed</p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -753,19 +753,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>27</em></p>
+<p><strong>27</strong></p>
 </td>
 <td width="144">
 <p><em>Eucalyptus grandis</em> (Eucalyptus)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>eg.pep</u></p>
+<td width="120">
+<p>eg.pep</p>
 </td>
 <td width="107">
-<p><u>eg.bed</u></p>
+<p>eg.bed</p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -779,19 +779,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>28</em></p>
+<p><strong>28</strong></p>
 </td>
 <td width="144">
 <p><em>Vitis vinifera </em>(Grape vine)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Rosids</p>
 </td>
-<td width="108">
-<p><u>vv.pep</u></p>
+<td width="120">
+<p>vv.pep</p>
 </td>
 <td width="107">
-<p><u>vv.bed</u></p>
+<p>vv.bed</p>
 </td>
 <td width="113">
 <p>Genoscope (Aug 2007)</p>
@@ -805,19 +805,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>29</em></p>
+<p><strong>29</strong></p>
 </td>
 <td width="144">
 <p><em>Solanum tuberosum</em> (Potato)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Solanace</p>
 </td>
-<td width="108">
-<p><u>st.pep</u></p>
+<td width="120">
+<p>st.pep</p>
 </td>
 <td width="107">
-<p><u>st.bed</u></p>
+<p>st.bed</p>
 </td>
 <td width="113">
 <p>Version 3.4</p>
@@ -831,19 +831,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>30</em></p>
+<p><strong>30</strong></p>
 </td>
 <td width="144">
 <p><em>Solanum lycopersicum</em> (Tomato)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Solanace</p>
 </td>
-<td width="108">
-<p><u>sl.pep</u></p>
+<td width="120">
+<p>sl.pep</p>
 </td>
 <td width="107">
-<p><u>sl.bed</u></p>
+<p>sl.bed</p>
 </td>
 <td width="113">
 <p>Version 2.4</p>
@@ -857,19 +857,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>31</em></p>
+<p><strong>31</strong></p>
 </td>
 <td width="144">
 <p><em>Capsicum annuum</em> (Hot pepper)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Solanace</p>
 </td>
-<td width="108">
-<p><u>cu.pep</u></p>
+<td width="120">
+<p>cu.pep</p>
 </td>
 <td width="107">
-<p><u>cu.bed</u></p>
+<p>cu.bed</p>
 </td>
 <td width="113">
 <p>Version 1.55</p>
@@ -883,19 +883,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>32</em></p>
+<p><strong>32</strong></p>
 </td>
 <td width="144">
 <p><em>Utricularia gibba</em> (Humped bladderwort)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Solanace</p>
 </td>
-<td width="108">
-<p><u>ug.pep</u></p>
+<td width="120">
+<p>ug.pep</p>
 </td>
 <td width="107">
-<p><u>ug.bed</u></p>
+<p>ug.bed</p>
 </td>
 <td width="113">
 <p>CoGe (Jun 2013)</p>
@@ -909,19 +909,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>33</em></p>
+<p><strong>33</strong></p>
 </td>
 <td width="144">
 <p><em>Actinidia chinensis</em> (Kiwifruit)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Solanace</p>
 </td>
-<td width="108">
-<p><u>ah.pep</u></p>
+<td width="120">
+<p>ah.pep</p>
 </td>
 <td width="107">
-<p><u>ah.bed</u></p>
+<p>ah.bed</p>
 </td>
 <td width="113">
 <p>May_2013</p>
@@ -935,19 +935,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>34</em></p>
+<p><strong>34</strong></p>
 </td>
 <td width="144">
 <p><em>Beta vulgaris</em> (Sugar beet)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Eudicots</p>
 </td>
-<td width="108">
-<p><u>bv.pep</u></p>
+<td width="120">
+<p>bv.pep</p>
 </td>
 <td width="107">
-<p><u>bv.bed</u></p>
+<p>bv.bed</p>
 </td>
 <td width="113">
 <p>RefBeet-1.1</p>
@@ -961,19 +961,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>35</em></p>
+<p><strong>35</strong></p>
 </td>
 <td width="144">
 <p><em>Nelumbo nucifera</em> (Sacred lotus)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Eudicots</p>
 </td>
-<td width="108">
-<p><u>nn.pep</u></p>
+<td width="120">
+<p>nn.pep</p>
 </td>
 <td width="107">
-<p><u>nn.bed</u></p>
+<p>nn.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -987,19 +987,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>36</em></p>
+<p><strong>36</strong></p>
 </td>
 <td width="144">
 <p><em>Triticum urartu</em> (Wheat A-genome)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>tu.pep</u></p>
+<td width="120">
+<p>tu.pep</p>
 </td>
 <td width="107">
-<p><u>tu.bed</u></p>
+<p>tu.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1013,19 +1013,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>37</em></p>
+<p><strong>37</strong></p>
 </td>
 <td width="144">
 <p><em>Hordeum vulgare</em> (Barley)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>hv.pep</u></p>
+<td width="120">
+<p>hv.pep</p>
 </td>
 <td width="107">
-<p><u>hv.bed</u></p>
+<p>hv.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1039,19 +1039,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>38</em></p>
+<p><strong>38</strong></p>
 </td>
 <td width="144">
 <p><em>Brachypodium distachyon</em> (Purple false brome)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>bd.pep</u></p>
+<td width="120">
+<p>bd.pep</p>
 </td>
 <td width="107">
-<p><u>bd.bed</u></p>
+<p>bd.bed</p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1065,19 +1065,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>39</em></p>
+<p><strong>39</strong></p>
 </td>
 <td width="144">
 <p><em>Oryza sativa</em> (Rice)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>os.pep</u></p>
+<td width="120">
+<p>os.pep</p>
 </td>
 <td width="107">
-<p><u>os.bed</u></p>
+<p>os.bed</p>
 </td>
 <td width="113">
 <p>Version 7.0</p>
@@ -1091,19 +1091,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>40</em></p>
+<p><strong>40</strong></p>
 </td>
 <td width="144">
 <p><em>Zea mays</em> (Maize)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>zm.pep</u></p>
+<td width="120">
+<p>zm.pep</p>
 </td>
 <td width="107">
-<p><u>zm.bed</u></p>
+<p>zm.bed</p>
 </td>
 <td width="113">
 <p>Version 6a</p>
@@ -1117,19 +1117,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>41</em></p>
+<p><strong>41</strong></p>
 </td>
 <td width="144">
 <p><em>Sorghum bicolor</em> (Sorghum)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>sb.pep</u></p>
+<td width="120">
+<p>sb.pep</p>
 </td>
 <td width="107">
-<p><u>sb.bed</u></p>
+<p>sb.bed</p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1143,19 +1143,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>42</em></p>
+<p><strong>42</strong></p>
 </td>
 <td width="144">
 <p><em>Setaria italica</em></p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>Si.pep</u></p>
+<td width="120">
+<p>Si.pep</p>
 </td>
 <td width="107">
-<p><u>Si.bed</u></p>
+<p>Si.bed</p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1169,19 +1169,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>43</em></p>
+<p><strong>43</strong></p>
 </td>
 <td width="144">
 <p><em>Elaeis guineensis </em>(Oil palm)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>el.pep</u></p>
+<td width="120">
+<p>el.pep</p>
 </td>
 <td width="107">
-<p><u>el.bed</u></p>
+<p>el.bed</p>
 </td>
 <td width="113">
 <p>Version 2.0</p>
@@ -1195,19 +1195,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>44</em></p>
+<p><strong>44</strong></p>
 </td>
 <td width="144">
 <p><em>Musa acuminata </em>(Banana)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>ma.pep</u></p>
+<td width="120">
+<p>ma.pep</p>
 </td>
 <td width="107">
-<p><u>ma.bed</u></p>
+<p>ma.bed</p>
 </td>
 <td width="113">
 <p>July_2012</p>
@@ -1221,19 +1221,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>45</em></p>
+<p><strong>45</strong></p>
 </td>
 <td width="144">
 <p><em>Phalaenopsis equestris</em> (Orchid)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>pe.pep</u></p>
+<td width="120">
+<p>pe.pep</p>
 </td>
 <td width="107">
-<p><u>pe.bed</u></p>
+<p>pe.bed</p>
 </td>
 <td width="113">
 <p>Version 5.0</p>
@@ -1247,19 +1247,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>46</em></p>
+<p><strong>46</strong></p>
 </td>
 <td width="144">
 <p><em>Zostera muelleri</em> (Seagrass)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Monocots</p>
 </td>
-<td width="108">
-<p><u>zo.pep</u></p>
+<td width="120">
+<p>zo.pep</p>
 </td>
 <td width="107">
-<p><u>zo.bed</u></p>
+<p>zo.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1273,19 +1273,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>47</em></p>
+<p><strong>47</strong></p>
 </td>
 <td width="144">
 <p><em>Amborella trichopoda</em> (Amborella)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Basal Angiosperm</p>
 </td>
-<td width="108">
-<p><u>ar.pep</u></p>
+<td width="120">
+<p>ar.pep</p>
 </td>
 <td width="107">
-<p><u>ar.bed</u></p>
+<p>ar.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1299,19 +1299,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>48</em></p>
+<p><strong>48</strong></p>
 </td>
 <td width="144">
 <p><em>Picea abies</em> (Norway spruce)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Gymnosperm</p>
 </td>
-<td width="108">
-<p><u>pa.pep</u></p>
+<td width="120">
+<p>pa.pep</p>
 </td>
 <td width="107">
-<p><u>pa.bed</u></p>
+<p>pa.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1325,19 +1325,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>49</em></p>
+<p><strong>49</strong></p>
 </td>
 <td width="144">
 <p><em>Selaginella moellendorffii </em>(Selaginella)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Moss</p>
 </td>
-<td width="108">
-<p><u>sm.pep</u></p>
+<td width="120">
+<p>sm.pep</p>
 </td>
 <td width="107">
-<p><u>sm.bed</u></p>
+<p>sm.bed</p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1351,19 +1351,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>50</em></p>
+<p><strong>50</strong></p>
 </td>
 <td width="144">
 <p><em>Physcomitrella patens</em> (Moss)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Moss</p>
 </td>
-<td width="108">
-<p><u>ph.pep</u></p>
+<td width="120">
+<p>ph.pep</p>
 </td>
 <td width="107">
-<p><u>ph.bed</u></p>
+<p>ph.bed</p>
 </td>
 <td width="113">
 <p>Version 3.0</p>
@@ -1377,19 +1377,19 @@
 </tr>
 <tr>
 <td width="53">
-<p><em>51</em></p>
+<p><strong>51</strong></p>
 </td>
 <td width="144">
 <p><em>Chlamydomonas reinhardtii</em> (Green algae)</p>
 </td>
-<td width="119">
+<td width="103">
 <p>Green algae</p>
 </td>
-<td width="108">
-<p><u>cr.pep</u></p>
+<td width="120">
+<p>cr.pep</p>
 </td>
 <td width="107">
-<p><u>cr.bed</u></p>
+<p>cr.bed</p>
 </td>
 <td width="113">
 <p>Version 5.5</p>
