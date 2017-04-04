@@ -1,5 +1,5 @@
-<p><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></p>
-<p><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="pipeline" width="10" height="10" /></strong></p>
+<p style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></p>
+<p style="text-align: center;"><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="pipeline" width="649" height="649" /></strong></p>
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
 <p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1).</p>
@@ -14,7 +14,7 @@
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
 </ul>
-<p><strong>Brief Guidelines of HMMER Usage:</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Brief Guidelines of HMMER Usage:</strong></p>
 <ul>
 <li>Install HMMER followed the instructions at: <a href="http://hmmer.org/documentation.html">http://hmmer.org/documentation.html</a></li>
 <li>Download the protein sequence alignment for PF00319 in Stockholm format (default name : &ldquo;PF00319_seed.txt&rdquo;): <a href="http://pfam.xfam.org/family/PF00319#tabview=tab3">http://pfam.xfam.org/family/PF00319#tabview=tab3</a></li>
