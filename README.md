@@ -1,17 +1,18 @@
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
-<p>Citation:</p>
-<p><em>Zhao, T., and Schranz, E. (2017). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
+<p>Citations:</p>
+<p><em>Zhao, T., and Schranz, E. (2017a). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
+<p><em>Zhao, T., Holmer, R., de Bruijn, S., van den Burg, H.A., and Schranz, M.E. (2017b). Phylogenomic Synteny Network Analysis Reveals an Ancient MADS-Box Transcription Factor Tandem Duplication and Lineage-Specific Transpositions. bioRxiv, 100990.</em></p>
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
-<p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1).</p>
+<p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017b are listed and available for download below (Table 1).</p>
 <p>For <strong>Steps 2 and 3</strong>, we provide a bash script (<a href="http://10.85.9.0/SynNet.sh">SynNet.sh</a>) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
 <ul>
 <li>Users have to pre-install <a href="http://rapsearch2.sourceforge.net/">RAPSearch2</a> (BLAST-like program, but much faster) and <a href="http://chibba.pgml.uga.edu/mcscan2/">MCScanX</a> (for pairwise synteny block detection).</li>
 <li>Put all required genome files and the bash script in the same directory. Then, alter the first line of the program, which is a bracket containing species abbreviations (which are consistent to the names used in the genome files, tab separated).</li>
 <li>Run the program and get the result file called &ldquo;Final_Network&rdquo;, which contains all pairwise synteny blocks of your input species.</li>
 </ul>
-<p>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017 are available for download (&ldquo;<a href="http://10.85.9.0/51_genomes_blocks.gz">51_Genomes_Blocks</a>&rdquo;).</p>
+<p>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017b are available for download (&ldquo;<a href="http://10.85.9.0/51_genomes_blocks.gz">51_Genomes_Blocks</a>&rdquo;).</p>
 <p>At <strong>Step 4</strong>, for specific gene family studies you may need to extract sub-networks from the database. To do this, you need to first identify all gene family members from the genomes and then query this gene candidate list against the synteny block database.</p>
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
@@ -59,7 +60,7 @@
 <p>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization, which can be performed in different ways.</p>
 <p>Clustering algorithms: K-clique percolation (e.g., <a href="http://www.cfinder.org/">CFinder</a>, <a href="http://snap.stanford.edu/">SNAP</a>), Infomap, CNM, k-core decomposition, etc.</p>
 <p>Visualization tools:&nbsp; <a href="http://www.cytoscape.org/">Cytoscape</a>, <a href="https://gephi.org/">Gephi</a> et al.</p>
-<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017 are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/mads.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
+<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017b are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/mads.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
 <p>&nbsp;</p>
 <p>Table 1: Genomes Used in the study of Tao Zhao et al., 2017</p>
 <table width="915">
