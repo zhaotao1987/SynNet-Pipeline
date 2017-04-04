@@ -1,5 +1,7 @@
 <h1 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h1>
-<h1 style="text-align: justify;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="800" /><br /></strong></h1>
+<h1 style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="800" /><br /></strong></h1>
+<p>Citation:</p>
+<p>Zhao, T., and Schranz, E. (2017). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</p>
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
 <p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017 are listed and available for download below (Table 1).</p>
@@ -14,21 +16,34 @@
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
 </ul>
-<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Brief Guidelines of HMMER Usage:</strong></p>
+<blockquote>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;</strong>Brief Guidelines of HMMER Usage:</p>
+</blockquote>
 <ul>
-<li>Install HMMER followed the instructions at: <a href="http://hmmer.org/documentation.html">http://hmmer.org/documentation.html</a></li>
-<li>Download the protein sequence alignment for PF00319 in Stockholm format (default name : &ldquo;PF00319_seed.txt&rdquo;): <a href="http://pfam.xfam.org/family/PF00319#tabview=tab3">http://pfam.xfam.org/family/PF00319#tabview=tab3</a></li>
-<li>Hmmbuild: to make a model from the alignment
+<li>
+<blockquote>Install HMMER followed the instructions at: <a href="http://hmmer.org/documentation.html">http://hmmer.org/documentation.html</a></blockquote>
+</li>
+<li>
+<blockquote>Download the protein sequence alignment for PF00319 in Stockholm format (default name : &ldquo;PF00319_seed.txt&rdquo;): <a href="http://pfam.xfam.org/family/PF00319#tabview=tab3">http://pfam.xfam.org/family/PF00319#tabview=tab3</a></blockquote>
+</li>
+<li>
+<blockquote>Hmmbuild: to make a model from the alignment
 <ul>
-<li>Usage: <strong>hmmbuild</strong> [-options] &lt;hmmfile output&gt; &lt;alignment file input&gt;</li>
+<li>Usage: hmmbuild [-options] &lt;hmmfile output&gt; &lt;alignment file input&gt;</li>
 <li>Example: hmmbuild MADS.hmm PF00319_seed.txt</li>
 <li>hmm is the output model for characterizing MADS-box genes.</li>
 </ul>
+</blockquote>
 </li>
-<li>Hmmsearch: to identify all candidate members from the peptide database.
+<li>
+<blockquote>Hmmsearch: to identify all candidate members from the peptide database.</blockquote>
 <ul>
-<li>Usage: <strong>hmmsearch</strong> [options] &lt;query hmmfile&gt; &lt;target seqfile&gt;</li>
-<li>Example: hmmsearch MADS.hmm 51_Genomes_Peps &gt; MADS_Results</li>
+<li>
+<blockquote>Usage: hmmsearch [options] &lt;query hmmfile&gt; &lt;target seqfile&gt;</blockquote>
+</li>
+<li>
+<blockquote>Example: hmmsearch MADS.hmm 51_Genomes_Peps &gt; MADS_Results</blockquote>
+</li>
 </ul>
 </li>
 </ul>
