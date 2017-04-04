@@ -606,10 +606,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/Aeth.pep">Aeth.pep</a></p>
+<p><a href="http://10.85.9.0/aeth.pep">aeth.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/Aeth.bed">Aeth.bed</a></p>
+<p><a href="http://10.85.9.0/aeth.bed">aeth.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.5</p>
@@ -1152,10 +1152,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/si.pep">Si.pep</a></p>
+<p><a href="http://10.85.9.0/si.pep">si.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/si.bed">Si.bed</a></p>
+<p><a href="http://10.85.9.0/si.bed">si.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1403,6 +1403,5 @@
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
