@@ -1,19 +1,18 @@
 # !/bin/bash
-# declare an array called array and define 3 vales
-# Input files: *.bed/gff & *.pep of each species
-# Example: at.bed, at.pep
-# This is advanced version of SynNet, written by Tao
-# Starts from Rapsearch, data pretreatment, synteny detection, sort output 
+# Input files: A pep fasta file and bed file of each genome.
+# Example: at.bed, at.pep, al.bed, al.pep...
+# The program will first do intra- and inter- genome comparisons using RAPsearch, then trimming the outputs for pairwise synteny 
+# detection by MCscanX, and finally trimming the synteny blocks(.collinearity files) into a final synteny network (database).
 
 #########################
-#	Step_1: species list
+#	Step_1: Species list
 #########################
 # separated by space
 array=(pv	gm	cc	mt	ca	lj	cl	cs	pt	rc	md	pb	pp	pm	fv	at	al	cb	bo	br	aeth	tare	cp	gr	ta	ci	eg	vv	st	sl	cu	ug	ah	bv	nn	tu	hv	bd	os	zm	sb	si	el	ma	pe	zo	ar	pa	sm	ph	cr)
 
 
 #############################################################
-#	Step_2: Lets's first generate database of each genome!
+#	Step_2: Lets's first make database of each genome
 #############################################################
 
 for i in "${array[@]}";do
@@ -23,7 +22,7 @@ echo make database for species_$i
 done
 
 ####################################################################
-#	Step_3: Now lets run Rapsearch and Generate BLASTP-like results
+#	Step_3: Now lets run RAPSearch and Generate BLASTP-like results
 ####################################################################
 
 for i in "${array[@]}";do
@@ -56,6 +55,7 @@ echo ##########Now we do intraspecies MCScanX, prepare inputs..##########
 
 for i in "${array[@]}";do
 	for j in "${array[@]}";do
+	
 	# if at=at and so on, prepare file especially
 	
 	if [ "$i" = "$j" ]; then
