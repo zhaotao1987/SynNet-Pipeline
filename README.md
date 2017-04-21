@@ -6,13 +6,13 @@
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
 <p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017b are listed and available for download below (Table 1).</p>
-<p>For <strong>Steps 2 and 3</strong>, we provide a bash script (<a href="http://10.85.9.0/SynNet.sh">SynNet.sh</a>) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
+<p>For <strong>Steps 2 and 3</strong>, we provide a bash script (<a href="http://10.85.9.150/SynNet.sh">SynNet.sh</a>) that can automatically perform pairwise inter- and intra- species comparisons, trimming the outputs for synteny detection, and treating outputs containing all synteny blocks to a final network file. This network database contains four columns: Block_ID, Block_Score, Gene1, and Gene2 (Gene 1 and Gene 2 are a syntenic gene pair).</p>
 <ul>
 <li>Users have to pre-install <a href="http://rapsearch2.sourceforge.net/">RAPSearch2</a> (BLAST-like program, but much faster) and <a href="http://chibba.pgml.uga.edu/mcscan2/">MCScanX</a> (for pairwise synteny block detection).</li>
 <li>Put all required genome files and the bash script in the same directory. Then, alter the first line of the program, which is a bracket containing species abbreviations (which are consistent to the names used in the genome files, tab separated).</li>
 <li>Run the program and get the result file called &ldquo;Final_Network&rdquo;, which contains all pairwise synteny blocks of your input species.</li>
 </ul>
-<p>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017b are available for download (&ldquo;<a href="http://10.85.9.0/51_genomes_blocks.gz">51_Genomes_Blocks</a>&rdquo;).</p>
+<p>&gt;&gt;&gt; Synteny network of the fifty-one plant genomes used in the study of Tao et al., 2017b are available for download (&ldquo;<a href="http://10.85.9.150/51_genomes_blocks.gz">51_Genomes_Blocks</a>&rdquo;).</p>
 <p>At <strong>Step 4</strong>, for specific gene family studies you may need to extract sub-networks from the database. To do this, you need to first identify all gene family members from the genomes and then query this gene candidate list against the synteny block database.</p>
 <ul>
 <li>We use <a href="http://hmmer.org/">HMMER</a> for gene family identification. HMMs (Hidden Markov Models) for specific gene families can be obtained from Pfam. Users can use <a href="http://pfam.xfam.org/search#tabview=tab0">Pfam Search</a> or NCBI <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">BLAST</a> to help identify the feature domain(s) in the protein sequence. For example, a plant MADS-box protein is characterized by a core DNA binding domain (<a href="http://pfam.xfam.org/family/PF00319#tabview=tab4">PF00319</a>).</li>
@@ -48,19 +48,19 @@
 </ul>
 </li>
 </ul>
-<p>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;(&ldquo;<a href="http://10.85.9.0/51_GENOMES_PEP.gz">51_Genomes_Peps</a>&rdquo;).</p>
-<p>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;<a href="http://10.85.9.0/mads_list">MADS_list</a>&rdquo;)</p>
+<p>&gt;&gt;&gt; Peptides for 51 plant genomes are merged and available for download, which can be used for an easier identification of gene family members of all 51 genomes. &nbsp;(&ldquo;<a href="http://10.85.9.150/51_GENOMES_PEP.gz">51_Genomes_Peps</a>&rdquo;).</p>
+<p>&gt;&gt;&gt; The gene list of candidate MADS-box genes from the 51 Genomes (&ldquo;<a href="http://10.85.9.150/mads_list">MADS_list</a>&rdquo;)</p>
 <ul>
 <li>Extract subnetwork from the synteny network database as needed, using a list containing all HMMER-identified family members.</li>
 <li>Command: grep -f MADS_list 51_Genomes_Blocks &gt; MADS.SynNet</li>
 <li>Now we obtain all syntenic relationships for all MADS-box genes.</li>
 </ul>
-<p>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (<a href="http://10.85.9.0/mads.synnet">MADS.SynNet</a>)</p>
+<p>&gt;&gt;&gt; Synteny network of MADS-box genes across 51genomes (<a href="http://10.85.9.150/mads.synnet">MADS.SynNet</a>)</p>
 <p><strong>Step 5</strong>:</p>
 <p>The subnetwork file (MADS.SynNet) can be trimmed into several formats for clustering and visualization, which can be performed in different ways.</p>
 <p>Clustering algorithms: K-clique percolation (e.g., <a href="http://www.cfinder.org/">CFinder</a>, <a href="http://snap.stanford.edu/">SNAP</a>), Infomap, CNM, k-core decomposition, etc.</p>
 <p>Visualization tools:&nbsp; <a href="http://www.cytoscape.org/">Cytoscape</a>, <a href="https://gephi.org/">Gephi</a> et al.</p>
-<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017b are available for download and visualization in Cytoscape (<a href="http://10.85.9.0/mads.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
+<p>&gt;&gt;&gt; Example networks from Tao Zhao et al., 2017b are available for download and visualization in Cytoscape (<a href="http://10.85.9.150/mads.cys">MADS.cys</a>), Cytoscape version 3.4.0.</p>
 <p>&nbsp;</p>
 <p>Table 1: Genomes Used in the study of Tao Zhao et al., 2017</p>
 <table width="915">
@@ -102,10 +102,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pv.pep">pv.pep</a></p>
+<p><a href="http://10.85.9.150/pv.pep">pv.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pv.bed">pv.bed</a></p>
+<p><a href="http://10.85.9.150/pv.bed">pv.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -128,10 +128,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/gm.pep">gm.pep</a></p>
+<p><a href="http://10.85.9.150/gm.pep">gm.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/gm.bed">gm.bed</a></p>
+<p><a href="http://10.85.9.150/gm.bed">gm.bed</a></p>
 </td>
 <td width="113">
 <p>Wm82.a2.v1</p>
@@ -154,10 +154,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cc.pep">cc.pep</a></p>
+<p><a href="http://10.85.9.150/cc.pep">cc.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cc.bed">cc.bed</a></p>
+<p><a href="http://10.85.9.150/cc.bed">cc.bed</a></p>
 </td>
 <td width="113">
 <p>Nov_2011</p>
@@ -180,10 +180,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/mt.pep">mt.pep</a></p>
+<p><a href="http://10.85.9.150/mt.pep">mt.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/mt.bed">mt.bed</a></p>
+<p><a href="http://10.85.9.150/mt.bed">mt.bed</a></p>
 </td>
 <td width="113">
 <p>Mt4.0v1</p>
@@ -206,10 +206,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ca.pep">ca.pep</a></p>
+<p><a href="http://10.85.9.150/ca.pep">ca.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ca.bed">ca.bed</a></p>
+<p><a href="http://10.85.9.150/ca.bed">ca.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -232,10 +232,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/lj.pep">lj.pep</a></p>
+<p><a href="http://10.85.9.150/lj.pep">lj.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/lj.bed">lj.bed</a></p>
+<p><a href="http://10.85.9.150/lj.bed">lj.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.5</p>
@@ -258,10 +258,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cl.pep">cl.pep</a></p>
+<p><a href="http://10.85.9.150/cl.pep">cl.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cl.bed">cl.bed</a></p>
+<p><a href="http://10.85.9.150/cl.bed">cl.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -284,10 +284,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cs.pep">cs.pep</a></p>
+<p><a href="http://10.85.9.150/cs.pep">cs.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cs.bed">cs.bed</a></p>
+<p><a href="http://10.85.9.150/cs.bed">cs.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -310,10 +310,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pt.pep">pt.pep</a></p>
+<p><a href="http://10.85.9.150/pt.pep">pt.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pt.bed">pt.bed</a></p>
+<p><a href="http://10.85.9.150/pt.bed">pt.bed</a></p>
 </td>
 <td width="113">
 <p>Version 3.0</p>
@@ -336,10 +336,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/rc.pep">rc.pep</a></p>
+<p><a href="http://10.85.9.150/rc.pep">rc.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/rc.bed">rc.bed</a></p>
+<p><a href="http://10.85.9.150/rc.bed">rc.bed</a></p>
 </td>
 <td width="113">
 <p>Version 0.1</p>
@@ -362,10 +362,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/md.pep">md.pep</a></p>
+<p><a href="http://10.85.9.150/md.pep">md.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/md.bed">md.bed</a></p>
+<p><a href="http://10.85.9.150/md.bed">md.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -388,10 +388,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pb.pep">pb.pep</a></p>
+<p><a href="http://10.85.9.150/pb.pep">pb.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pb.bed">pb.bed</a></p>
+<p><a href="http://10.85.9.150/pb.bed">pb.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -414,10 +414,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pp.pep">pp.pep</a></p>
+<p><a href="http://10.85.9.150/pp.pep">pp.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pp.bed">pp.bed</a></p>
+<p><a href="http://10.85.9.150/pp.bed">pp.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -440,10 +440,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pm.pep">pm.pep</a></p>
+<p><a href="http://10.85.9.150/pm.pep">pm.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pm.bed">pm.bed</a></p>
+<p><a href="http://10.85.9.150/pm.bed">pm.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -466,10 +466,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/fv.pep">fv.pep</a></p>
+<p><a href="http://10.85.9.150/fv.pep">fv.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/fv.bed">fv.bed</a></p>
+<p><a href="http://10.85.9.150/fv.bed">fv.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -492,10 +492,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/at.pep">at.pep</a></p>
+<p><a href="http://10.85.9.150/at.pep">at.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/at.bed">at.bed</a></p>
+<p><a href="http://10.85.9.150/at.bed">at.bed</a></p>
 </td>
 <td width="113">
 <p>TAIR10</p>
@@ -518,10 +518,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/al.pep">al.pep</a></p>
+<p><a href="http://10.85.9.150/al.pep">al.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/al.bed">al.bed</a></p>
+<p><a href="http://10.85.9.150/al.bed">al.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -544,10 +544,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cb.pep">cb.pep</a></p>
+<p><a href="http://10.85.9.150/cb.pep">cb.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cb.bed">cb.bed</a></p>
+<p><a href="http://10.85.9.150/cb.bed">cb.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -570,10 +570,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/bo.pep">bo.pep</a></p>
+<p><a href="http://10.85.9.150/bo.pep">bo.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/bo.bed">bo.bed</a></p>
+<p><a href="http://10.85.9.150/bo.bed">bo.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -596,10 +596,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/br.pep">br.pep</a></p>
+<p><a href="http://10.85.9.150/br.pep">br.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/br.bed">br.bed</a></p>
+<p><a href="http://10.85.9.150/br.bed">br.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.3</p>
@@ -622,10 +622,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/aeth.pep">aeth.pep</a></p>
+<p><a href="http://10.85.9.150/aeth.pep">aeth.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/aeth.bed">aeth.bed</a></p>
+<p><a href="http://10.85.9.150/aeth.bed">aeth.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.5</p>
@@ -648,10 +648,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/tare.pep">tare.pep</a></p>
+<p><a href="http://10.85.9.150/tare.pep">tare.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/tare.bed">tare.bed</a></p>
+<p><a href="http://10.85.9.150/tare.bed">tare.bed</a></p>
 </td>
 <td width="113">
 <p>Version 5</p>
@@ -674,10 +674,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cp.pep">cp.pep</a></p>
+<p><a href="http://10.85.9.150/cp.pep">cp.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cp.bed">cp.bed</a></p>
+<p><a href="http://10.85.9.150/cp.bed">cp.bed</a></p>
 </td>
 <td width="113">
 <p>ASGPBv0.4</p>
@@ -700,10 +700,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/gr.pep">gr.pep</a></p>
+<p><a href="http://10.85.9.150/gr.pep">gr.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/gr.bed">gr.bed</a></p>
+<p><a href="http://10.85.9.150/gr.bed">gr.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -726,10 +726,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ta.pep">ta.pep</a></p>
+<p><a href="http://10.85.9.150/ta.pep">ta.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ta.bed">ta.bed</a></p>
+<p><a href="http://10.85.9.150/ta.bed">ta.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -752,10 +752,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ci.pep">ci.pep</a></p>
+<p><a href="http://10.85.9.150/ci.pep">ci.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ci.bed">ci.bed</a></p>
+<p><a href="http://10.85.9.150/ci.bed">ci.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -778,10 +778,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/eg.pep">eg.pep</a></p>
+<p><a href="http://10.85.9.150/eg.pep">eg.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/eg.bed">eg.bed</a></p>
+<p><a href="http://10.85.9.150/eg.bed">eg.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.1</p>
@@ -804,10 +804,10 @@
 <p>Rosids</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/vv.pep">vv.pep</a></p>
+<p><a href="http://10.85.9.150/vv.pep">vv.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/vv.bed">vv.bed</a></p>
+<p><a href="http://10.85.9.150/vv.bed">vv.bed</a></p>
 </td>
 <td width="113">
 <p>Genoscope (Aug 2007)</p>
@@ -830,10 +830,10 @@
 <p>Solanace</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/st.pep">st.pep</a></p>
+<p><a href="http://10.85.9.150/st.pep">st.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/st.bed">st.bed</a></p>
+<p><a href="http://10.85.9.150/st.bed">st.bed</a></p>
 </td>
 <td width="113">
 <p>Version 3.4</p>
@@ -856,10 +856,10 @@
 <p>Solanace</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/sl.pep">sl.pep</a></p>
+<p><a href="http://10.85.9.150/sl.pep">sl.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/sl.bed">sl.bed</a></p>
+<p><a href="http://10.85.9.150/sl.bed">sl.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.4</p>
@@ -882,10 +882,10 @@
 <p>Solanace</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cu.pep">cu.pep</a></p>
+<p><a href="http://10.85.9.150/cu.pep">cu.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cu.bed">cu.bed</a></p>
+<p><a href="http://10.85.9.150/cu.bed">cu.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.55</p>
@@ -908,10 +908,10 @@
 <p>Solanace</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ug.pep">ug.pep</a></p>
+<p><a href="http://10.85.9.150/ug.pep">ug.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ug.bed">ug.bed</a></p>
+<p><a href="http://10.85.9.150/ug.bed">ug.bed</a></p>
 </td>
 <td width="113">
 <p>CoGe (Jun 2013)</p>
@@ -934,10 +934,10 @@
 <p>Solanace</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ah.pep">ah.pep</a></p>
+<p><a href="http://10.85.9.150/ah.pep">ah.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ah.bed">ah.bed</a></p>
+<p><a href="http://10.85.9.150/ah.bed">ah.bed</a></p>
 </td>
 <td width="113">
 <p>May_2013</p>
@@ -960,10 +960,10 @@
 <p>Eudicots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/bv.pep">bv.pep</a></p>
+<p><a href="http://10.85.9.150/bv.pep">bv.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/bv.bed">bv.bed</a></p>
+<p><a href="http://10.85.9.150/bv.bed">bv.bed</a></p>
 </td>
 <td width="113">
 <p>RefBeet-1.1</p>
@@ -986,10 +986,10 @@
 <p>Eudicots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/nn.pep">nn.pep</a></p>
+<p><a href="http://10.85.9.150/nn.pep">nn.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/nn.bed">nn.bed</a></p>
+<p><a href="http://10.85.9.150/nn.bed">nn.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1012,10 +1012,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/tu.pep">tu.pep</a></p>
+<p><a href="http://10.85.9.150/tu.pep">tu.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/tu.bed">tu.bed</a></p>
+<p><a href="http://10.85.9.150/tu.bed">tu.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1038,10 +1038,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/hv.pep">hv.pep</a></p>
+<p><a href="http://10.85.9.150/hv.pep">hv.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/hv.bed">hv.bed</a></p>
+<p><a href="http://10.85.9.150/hv.bed">hv.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1064,10 +1064,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/bd.pep">bd.pep</a></p>
+<p><a href="http://10.85.9.150/bd.pep">bd.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/bd.bed">bd.bed</a></p>
+<p><a href="http://10.85.9.150/bd.bed">bd.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1090,10 +1090,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/os.pep">os.pep</a></p>
+<p><a href="http://10.85.9.150/os.pep">os.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/os.bed">os.bed</a></p>
+<p><a href="http://10.85.9.150/os.bed">os.bed</a></p>
 </td>
 <td width="113">
 <p>Version 7.0</p>
@@ -1116,10 +1116,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/zm.pep">zm.pep</a></p>
+<p><a href="http://10.85.9.150/zm.pep">zm.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/zm.bed">zm.bed</a></p>
+<p><a href="http://10.85.9.150/zm.bed">zm.bed</a></p>
 </td>
 <td width="113">
 <p>Version 6a</p>
@@ -1142,10 +1142,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/sb.pep">sb.pep</a></p>
+<p><a href="http://10.85.9.150/sb.pep">sb.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/sb.bed">sb.bed</a></p>
+<p><a href="http://10.85.9.150/sb.bed">sb.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1168,10 +1168,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/si.pep">si.pep</a></p>
+<p><a href="http://10.85.9.150/si.pep">si.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/si.bed">si.bed</a></p>
+<p><a href="http://10.85.9.150/si.bed">si.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.1</p>
@@ -1194,10 +1194,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/el.pep">el.pep</a></p>
+<p><a href="http://10.85.9.150/el.pep">el.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/el.bed">el.bed</a></p>
+<p><a href="http://10.85.9.150/el.bed">el.bed</a></p>
 </td>
 <td width="113">
 <p>Version 2.0</p>
@@ -1220,10 +1220,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ma.pep">ma.pep</a></p>
+<p><a href="http://10.85.9.150/ma.pep">ma.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ma.bed">ma.bed</a></p>
+<p><a href="http://10.85.9.150/ma.bed">ma.bed</a></p>
 </td>
 <td width="113">
 <p>July_2012</p>
@@ -1246,10 +1246,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pe.pep">pe.pep</a></p>
+<p><a href="http://10.85.9.150/pe.pep">pe.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pe.bed">pe.bed</a></p>
+<p><a href="http://10.85.9.150/pe.bed">pe.bed</a></p>
 </td>
 <td width="113">
 <p>Version 5.0</p>
@@ -1272,10 +1272,10 @@
 <p>Monocots</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/zo.pep">zo.pep</a></p>
+<p><a href="http://10.85.9.150/zo.pep">zo.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/zo.bed">zo.bed</a></p>
+<p><a href="http://10.85.9.150/zo.bed">zo.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1298,10 +1298,10 @@
 <p>Basal Angiosperm</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ar.pep">ar.pep</a></p>
+<p><a href="http://10.85.9.150/ar.pep">ar.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ar.bed">ar.bed</a></p>
+<p><a href="http://10.85.9.150/ar.bed">ar.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1324,10 +1324,10 @@
 <p>Gymnosperm</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/pa.pep">pa.pep</a></p>
+<p><a href="http://10.85.9.150/pa.pep">pa.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/pa.bed">pa.bed</a></p>
+<p><a href="http://10.85.9.150/pa.bed">pa.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1350,10 +1350,10 @@
 <p>Moss</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/sm.pep">sm.pep</a></p>
+<p><a href="http://10.85.9.150/sm.pep">sm.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/sm.bed">sm.bed</a></p>
+<p><a href="http://10.85.9.150/sm.bed">sm.bed</a></p>
 </td>
 <td width="113">
 <p>Version 1.0</p>
@@ -1376,10 +1376,10 @@
 <p>Moss</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/ph.pep">ph.pep</a></p>
+<p><a href="http://10.85.9.150/ph.pep">ph.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/ph.bed">ph.bed</a></p>
+<p><a href="http://10.85.9.150/ph.bed">ph.bed</a></p>
 </td>
 <td width="113">
 <p>Version 3.0</p>
@@ -1402,10 +1402,10 @@
 <p>Green algae</p>
 </td>
 <td width="120">
-<p><a href="http://10.85.9.0/cr.pep">cr.pep</a></p>
+<p><a href="http://10.85.9.150/cr.pep">cr.pep</a></p>
 </td>
 <td width="107">
-<p><a href="http://10.85.9.0/cr.bed">cr.bed</a></p>
+<p><a href="http://10.85.9.150/cr.bed">cr.bed</a></p>
 </td>
 <td width="113">
 <p>Version 5.5</p>
