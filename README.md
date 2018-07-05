@@ -1,4 +1,4 @@
-<h3><strong>UPDATES 5 Jul 2018</strong><br />Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</h3>
+<p><strong>UPDATES </strong>5 Jul 2018<br />Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
 <p>&nbsp;</p>
 
 ======
