@@ -1,4 +1,22 @@
-<p><strong>UPDATES </strong>5 Jul 2018<br />Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
+<p><strong>UPDATES </strong>5 Jul 2018</p>
+<p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
+<p><a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-Diamond.sh</a>: Used for the first time, when you would like to construct synteny network of your interested genomes</p>
+<p><a id="4ed55da12c03cc56cf797e8043c3fc61-7a0cebf3bdec62eb02084eeae8d8faaefabeea41" class="js-navigation-open" title="SynetAdding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetAdding-Diamond.sh">SynetAdding-Diamond.sh</a>: Used when you would like to add new genomes into the existing results.</p>
+<p>-Prepeations</p>
+<p>&nbsp; &nbsp;- Whole genome protein files in fasta format.</p>
+<p>&nbsp; &nbsp;- GFF/BED file for each genome (Example:&nbsp;<a href="http://chibba.pgml.uga.edu/mcscan2/examples/at.gff">http://chibba.pgml.uga.edu/mcscan2/examples/at.gff</a>)</p>
+<p>&nbsp; &nbsp;-Install DIAMOND and MCScanX&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;-DIAMOND:&nbsp;<a href="https://github.com/bbuchfink/diamond">https://github.com/bbuchfink/diamond</a></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;-MCScanX:&nbsp;&nbsp;<a href="http://chibba.pgml.uga.edu/mcscan2/">http://chibba.pgml.uga.edu/mcscan2/</a></p>
+<p>-Notes / Tips</p>
+<p>&nbsp; &nbsp;- Index your genome files, using 3-5 letters, for example for "<em>Arabidopis thaliana</em>", rename genome file and gff file as "Ath.pep" and "Ath.bed", and for "<em>Oryza sativa</em>" ("Osa.pep" and "Osa.bed")</p>
+<p>-To run</p>
+<p>&nbsp; - Put all pairs of "*.pep" and "*.bed" of your genomes under one folder,&nbsp;copy the script (<a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-&nbsp; Diamond.sh</a>) to the same folder.&nbsp;</p>
+<p>&nbsp; - Change the line 53 in the script (content in array): enter the genome indexes of your own selection.&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp;- for example:&nbsp; &nbsp; &nbsp; array=(ath osa oth Alyr)&nbsp;</p>
+<p>&nbsp; - The array can be of any length, depending the genomes you want to compare.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ======
