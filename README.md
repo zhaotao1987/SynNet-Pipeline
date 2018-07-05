@@ -1,6 +1,5 @@
-UPDATES 5 Jul 2018
-Here I attach two newer scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons.
-
+<h3><strong>UPDATES 5 Jul 2018</strong><br />Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</h3>
+<p>&nbsp;</p>
 
 ======
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
