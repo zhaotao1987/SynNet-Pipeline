@@ -1,3 +1,8 @@
+UPDATES 5 Jul 2018
+Here I attach two newer scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons.
+
+
+======
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
 <p>Citations:</p>
