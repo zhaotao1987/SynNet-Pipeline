@@ -5,7 +5,7 @@
 <p>-Prepeations</p>
 <p>&nbsp; &nbsp;- Whole genome protein files in fasta format.</p>
 <p>&nbsp; &nbsp;- GFF/BED file for each genome (Example:&nbsp;<a href="http://chibba.pgml.uga.edu/mcscan2/examples/at.gff">http://chibba.pgml.uga.edu/mcscan2/examples/at.gff</a>)</p>
-<p>&nbsp; &nbsp;-Install DIAMOND and MCScanX(Wang et al., 2012)&nbsp;</p>
+<p>&nbsp; &nbsp;-Install DIAMOND and MCScanX (Wang et al., 2012)&nbsp;</p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp;-DIAMOND:&nbsp;<a href="https://github.com/bbuchfink/diamond">https://github.com/bbuchfink/diamond</a></p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp;-MCScanX:&nbsp;&nbsp;<a href="http://chibba.pgml.uga.edu/mcscan2/">http://chibba.pgml.uga.edu/mcscan2/</a></p>
 <p>-Notes / Tips</p>
