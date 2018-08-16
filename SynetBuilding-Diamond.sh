@@ -4,7 +4,7 @@
  
 display_usage() { 
 	echo -e "\nThis Script is for Constructing Synteny Network Database" 
- 	echo -e "\nUsage:bash SynetBuilding-Diamond.sh k OUTPUT-name\n"
+ 	echo -e "\nUsage:bash SynetBuilding-Diamond.sh k w m \n"
 	echo -e "\n-k 0: All hits\n-k 25: By default\n-k 6: MCScanX suggested\n"
 	echo -e "\n-w 0: No collapse\n-w 5: default\n"
 	echo -e "\n-m 25: Default Gaps\n"
