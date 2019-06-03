@@ -1,3 +1,109 @@
+<p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
+<p>Phylogenomic Profiling</p>
+<p>When you have constructed a synteny network database of your interested genomes, you could then perform clustering to the entire network (using infomap algorithm for example), or you could filter out subnetworks first (for certain gene family) and then perform clustering (using infomap, CFinder etc.).</p>
+<p>Next, we would like to summarize clusters according to its node compositions. Then we could infer what are the conserved clusters, and what are the specific ones (shared by certain species group for example). A rough description of this process is like this:&nbsp; we first generate a matrix, rows stand for clusters, and columns stand for species, the value stands for the number of nodes of that species in that cluster. Then we calculate a distance matrix between pair-wise clusters, and finally perform hierarchical clustering to cluster similar-patterned clusters.</p>
+<table>
+<tbody>
+<tr>
+<td width="95">
+<p>&nbsp;</p>
+</td>
+<td width="95">
+<p>Species 1</p>
+</td>
+<td width="95">
+<p>Species 2</p>
+</td>
+<td width="95">
+<p>Species 3</p>
+</td>
+<td width="89">
+<p>&hellip;</p>
+</td>
+<td width="95">
+<p>Species n</p>
+</td>
+</tr>
+<tr>
+<td width="95">
+<p>Cluster 1</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+<td width="95">
+<p>2</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+<td width="89">
+<p>&hellip;</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td width="95">
+<p>&hellip;..</p>
+</td>
+<td width="95">
+<p>0</p>
+</td>
+<td width="95">
+<p>0</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+<td width="89">
+<p>&hellip;</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td width="95">
+<p>Cluster n</p>
+</td>
+<td width="95">
+<p>0</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+<td width="95">
+<p>1</p>
+</td>
+<td width="89">
+<p>&hellip;</p>
+</td>
+<td width="95">
+<p>0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Now let&rsquo;s start. Suppose you are using the infomap script <a id="6330f71994f9e114efef99d577a86bfd-303a3677451bc5c0f00e31a5098f9bec1fda932d" class="js-navigation-open" title="infomap.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/infomap.r">infomap.r</a>, the result looks like this:</p>
+<p>names&nbsp;&nbsp; mem</p>
+<p>aar_AA31G00673&nbsp; 1</p>
+<p>aar_AA32G00725&nbsp; 2</p>
+<p>aar_AA39G00041&nbsp; 1</p>
+<p>aar_AA29G00273&nbsp; 3</p>
+<p>ach_Achn050361&nbsp; 1</p>
+<p>ach_Achn168171&nbsp; 1</p>
+<p>ach_Achn330591&nbsp; 1</p>
+<p>ach_Achn198651&nbsp; 1</p>
+<p>ach_Achn060901&nbsp; 1</p>
+<p>&hellip;&hellip;.</p>
+<p>&nbsp;</p>
+<p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes.</p>
+
+================================================================================================
+
 <p><strong>UPDATES </strong>5 Jul 2018</p>
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
 <p><a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-Diamond.sh</a>: Used for the first time, when you would like to construct synteny network of your interested genomes</p>
