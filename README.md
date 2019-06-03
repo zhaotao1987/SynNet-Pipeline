@@ -12,11 +12,10 @@
 <p>&nbsp; &nbsp;- Index your genome files, using 3-5 letters, for example for "<em>Arabidopis thaliana</em>", rename genome file and gff file as "Ath.pep" and "Ath.bed", and for "<em>Oryza sativa</em>" ("Osa.pep" and "Osa.bed")</p>
 <p>-To run</p>
 <p>&nbsp; - Put all pairs of "*.pep" and "*.bed" of your genomes under one folder,&nbsp;copy the script (<a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-&nbsp; Diamond.sh</a>) to the same folder.&nbsp;</p>
-<p>&nbsp; - Change the line 53 in the script (content in array): enter the genome indexes of your own selection.&nbsp;</p>
+<p>&nbsp; - Change the line 41 in the script (content in array): enter the genome indexes of your own selection.&nbsp;</p>
 <p>&nbsp; &nbsp; &nbsp;- for example:&nbsp; &nbsp; &nbsp; array=(ath osa oth Alyr)&nbsp;</p>
 <p>&nbsp; - The array can be of any length, depending the genomes you want to compare.&nbsp;</p>
 <p>&nbsp;</p>
-
 =============================================================================
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
