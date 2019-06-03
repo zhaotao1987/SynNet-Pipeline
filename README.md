@@ -100,7 +100,7 @@
 <p>ach_Achn198651&nbsp; 1</p>
 <p>ach_Achn060901&nbsp; 1</p>
 <p>&hellip;&hellip;.</p>
-<p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes. Also to change the content of Line 21 according to species genomes you use</p>
+<p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes. Also remember to change the content of Line 22 according to genomes you use. </p>
 <p>Usage: <strong> Rscript Phylogenomic_Profiling.r infomap_clustering_result cluster_profiled cluster_profiled_clustered <strong> </p>
 
 =============================================================================
