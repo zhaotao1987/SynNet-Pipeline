@@ -17,15 +17,10 @@ data <- data[,c(1,3,2)]
 # cluster by rows, Species by columns
 out <- table(data$Cluster,data$Species) 
 
-# Important: species order
+# Important: species order you have to change the content below, depending on the species you use.
 
 	myorder <- c('vra','van','pvu','gma','cca','tpr','mtr','adu',
 	'lja','Lan','car','pmu','ppe','pbr','mdo','roc','fve','Mno','Zju','hlu',
-	'jcu','mes','rco','lus','ptr','csa','cme','cla','cmo','jre','Bpe','cgr',
-	'cru','Aly','ath','Csa','bol','bra','bnp','rra','thh','tsa','lal','aar','spa','Bos','Alp',
-	'sir','cgy','tha','cpa','gra','tca','egr','csi','vvi','spe','sly','stu','sme','can','nbe','Nto',
-	'Nat','Nsy','pax','Ini','ugi','sin','mgu','coc','Lsa','hel','dca','ach','Cqu','sol','bvu',
-	'Ahy','nnu','tur','tae','ata','HOR','bdi','ogl','osa','oru','lpe','phe','zma','Zma','sbi','sit','oth',
 	'aco','egu','Pda','mac','Dca','peq','Aof','Xvi','spo','lmi','zom','atr')
 
 # In case, you miss species
