@@ -16,8 +16,6 @@
 <p>&nbsp; &nbsp; &nbsp;- for example:&nbsp; &nbsp; &nbsp; array=(ath osa oth Alyr)&nbsp;</p>
 <p>&nbsp; - The array can be of any length, depending the genomes you want to compare.&nbsp;</p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
 =============================================================================
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
