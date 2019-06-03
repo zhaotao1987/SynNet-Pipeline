@@ -102,9 +102,9 @@
 <p>&hellip;&hellip;.</p>
 <p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes.</p>
 =============================================================================
-
-<p><strong>UPDATES </strong>5 Jul 2018</p>
 <p>&nbsp;</p>
+<p><strong>UPDATES </strong>5 Jul 2018</p>
+
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
 <p><a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-Diamond.sh</a>: Used for the first time, when you would like to construct synteny network of your interested genomes</p>
 <p><a id="4ed55da12c03cc56cf797e8043c3fc61-7a0cebf3bdec62eb02084eeae8d8faaefabeea41" class="js-navigation-open" title="SynetAdding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetAdding-Diamond.sh">SynetAdding-Diamond.sh</a>: Used when you would like to add new genomes into the existing results.</p>
