@@ -1,4 +1,5 @@
 <p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
+<p>-------------------------------</p>
 <p>Phylogenomic Profiling</p>
 <p>When you have constructed a synteny network database of your interested genomes, you could then perform clustering to the entire network (using infomap algorithm for example), or you could filter out subnetworks first (for certain gene family) and then perform clustering (using infomap, CFinder etc.).</p>
 <p>Next, we would like to summarize clusters according to its node compositions. Then we could infer what are the conserved clusters, and what are the specific ones (shared by certain species group for example). A rough description of this process is like this:&nbsp; we first generate a matrix, rows stand for clusters, and columns stand for species, the value stands for the number of nodes of that species in that cluster. Then we calculate a distance matrix between pair-wise clusters, and finally perform hierarchical clustering to cluster similar-patterned clusters.</p>
@@ -99,10 +100,8 @@
 <p>ach_Achn198651&nbsp; 1</p>
 <p>ach_Achn060901&nbsp; 1</p>
 <p>&hellip;&hellip;.</p>
-<p>&nbsp;</p>
 <p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes.</p>
-
-================================================================================================
+<p>========================================================</p>
 
 <p><strong>UPDATES </strong>5 Jul 2018</p>
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
