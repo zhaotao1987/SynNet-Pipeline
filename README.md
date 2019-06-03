@@ -101,7 +101,7 @@
 <p>ach_Achn060901&nbsp; 1</p>
 <p>&hellip;&hellip;.</p>
 <p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes.</p>
-<p>========================================================</p>
+=============================================================================
 
 <p><strong>UPDATES </strong>5 Jul 2018</p>
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
