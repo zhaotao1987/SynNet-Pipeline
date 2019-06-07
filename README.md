@@ -144,9 +144,7 @@
 <p>&nbsp;</p>
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
-<p>Citations:</p>
-<p><em>Zhao, T., and Schranz, E. (2017a). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
-<p><em>Zhao, T., Holmer, R., de Bruijn, S., Angenent, G.C., van den Burg, H.A., and Schranz, M.E. (2017). Phylogenomic synteny network analysis of MADS-box transcription factor genes reveals lineage-specific transpositions, ancient tandem duplications, and deep positional conservation. The Plant Cell 29, 1278-1292.</em></p>
+
 <p>Synteny network construction consists of five primary steps: (1) Annotated genome data preparation, (2) pairwise whole-genome comparisons, (3) syntenic block detection and data merging, (4) sub-network extraction (optional), and (5) network data analysis and visualization.</p>
 <p>For <strong>Step 1</strong>, plant genomes can be downloaded from <a href="http://genome.jgi.doe.gov/pages/dynamicOrganismDownload.jsf?organism=PhytozomeV11">Phytozome</a>, <a href="https://www.ncbi.nlm.nih.gov/genome/browse/">NCBI</a>, <a href="http://bioinformatics.psb.ugent.be/plaza/versions/plaza_v3_dicots/download/index">Plaza</a>, <a href="https://genomevolution.org/coge/OrganismView.pl">CoGe</a>, etc. For each genome two files are needed: peptide sequences for all annotated/predicted genes (primary transcripts only) and a bed/GFF file indicating the genomic location of each gene. Users can prepare any number of genomes for synteny network construction. More genomes, longer computation time required.</p>
 <p>&gt;&gt;&gt; Fifty-one plant genomes used in the study of Tao Zhao et al., 2017b are listed and available for download below (Table 1).</p>
@@ -1564,4 +1562,10 @@
 </tbody>
 </table>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><strong>Citations</strong>:</p>
+<p><em>Zhao, T. and Schranz, E., (2019). Network-based microsynteny analysis identifies major differences and genomic outliers in mammalian and angiosperm genomes. Proceedings of the National Academy of Sciences. 116(6), 2165-2174.</em></p>
+<p><em>Zhao, T., Holmer, R., de Bruijn, S., Angenent, G.C., van den Burg, H.A., and Schranz, M.E. (2017). Phylogenomic synteny network</em> analysis<em> of MADS-box transcription factor genes reveals lineage-specific transpositions, ancient tandem duplications, and deep positional conservation. The Plant Cell 29, 1278-1292.</em></p>
+<p><em>Zhao, T., and Schranz, E. (2017). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
 <p>&nbsp;</p>
