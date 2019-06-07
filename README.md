@@ -1,5 +1,5 @@
 <p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
-<p>------&nbsp;</p>
+<p>-------------------------------</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
 <p>Improved the function enabling parallel running of MCScanX.</p>
 <p>Codes are better organized and explained.</p>
@@ -14,7 +14,8 @@
 <p>&nbsp;</p>
 <p>=================</p>
 
-
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
 <p>-------------------------------</p>
 <p>Phylogenomic Profiling</p>
