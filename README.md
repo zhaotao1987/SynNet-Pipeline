@@ -1,3 +1,19 @@
+<p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
+<p>------&nbsp;</p>
+<p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
+<p>Improved the function enabling parallel running of MCScanX.</p>
+<p>Codes are better organized and explained.</p>
+<p>Four key parameters: &nbsp;k (# tophits), s (# anchors), m (# gaps), and p (# CPUs)</p>
+<p>Setting for -p is used for both Dimond and MCScanX parralleling.&nbsp;</p>
+<p>Notes:</p>
+<p>Change Line 70 according to your genome list</p>
+<p>Options:</p>
+<p>Line127: duplicate_gene_classifier</p>
+<p>Line132: detect_collinear_tandem_arrays [intra-species]</p>
+<p>Line180-183: detect_collinear_tandem_arrays [inter-species]</p>
+
+
+
 <p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
 <p>-------------------------------</p>
 <p>Phylogenomic Profiling</p>
