@@ -4,7 +4,7 @@
 <p>Improved the function enabling parallel running of MCScanX.</p>
 <p>Codes are better organized and explained.</p>
 <p>Four key parameters: &nbsp;k (# tophits), s (# anchors), m (# gaps), and p (# CPUs)</p>
-<p>Setting for -p is used for both Dimond and MCScanX parralleling.&nbsp;</p>
+<p>Setting for -p is used for both Diamond and MCScanX parralleling.&nbsp;</p>
 <p>Notes:</p>
 <p>Change <a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L70">Line70 </a>according to your genome list</p>
 <p>Options:</p>
