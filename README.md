@@ -6,11 +6,11 @@
 <p>Four key parameters: &nbsp;k (# tophits), s (# anchors), m (# gaps), and p (# CPUs)</p>
 <p>Setting for -p is used for both Dimond and MCScanX parralleling.&nbsp;</p>
 <p>Notes:</p>
-<p>Change Line 70 according to your genome list</p>
+<p>Change <a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L70">Line70 </a>according to your genome list</p>
 <p>Options:</p>
-<p>Line127: duplicate_gene_classifier</p>
-<p>Line132: detect_collinear_tandem_arrays [intra-species]</p>
-<p>Line180-183: detect_collinear_tandem_arrays [inter-species]</p>
+<p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L127">Line127</a>: duplicate_gene_classifier</p>
+<p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L132">Line132</a>: detect_collinear_tandem_arrays [intra-species]</p>
+<p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L180-L183">Line180-183</a>: detect_collinear_tandem_arrays [inter-species]</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
