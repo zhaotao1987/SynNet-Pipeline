@@ -1566,6 +1566,6 @@
 
 <p><strong>Citations</strong>:</p>
 <p><em>Zhao, T. and Schranz, E., (2019). Network-based microsynteny analysis identifies major differences and genomic outliers in mammalian and angiosperm genomes. Proceedings of the National Academy of Sciences. 116(6), 2165-2174.</em></p>
-<p><em>Zhao, T., Holmer, R., de Bruijn, S., Angenent, G.C., van den Burg, H.A., and Schranz, M.E. (2017). Phylogenomic synteny network</em> analysis<em> of MADS-box transcription factor genes reveals lineage-specific transpositions, ancient tandem duplications, and deep positional conservation. The Plant Cell 29, 1278-1292.</em></p>
-<p><em>Zhao, T., and Schranz, E. (2017). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
+<p><em>Zhao, T., Holmer, R., de Bruijn, S., Angenent, G.C., van den Burg, H.A., and Schranz, M.E. (2017b). Phylogenomic synteny network</em> analysis<em> of MADS-box transcription factor genes reveals lineage-specific transpositions, ancient tandem duplications, and deep positional conservation. The Plant Cell 29, 1278-1292.</em></p>
+<p><em>Zhao, T., and Schranz, E. (2017a). Network Approaches for Plant Phylogenomic Synteny Analysis. Current Opinion in Plant Biology 36, 129-134.</em></p>
 <p>&nbsp;</p>
