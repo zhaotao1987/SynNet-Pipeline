@@ -143,7 +143,7 @@ wait
 	# 	Step_4.2  Another loop	
 	# 	This step is for inter-species synteny detection 
 	# 	How to avoid duplicates! A-B is the same as B-A, so keep only one
-	# 	use my small program
+	# 	
 	#######################################################################
 
 m=0
