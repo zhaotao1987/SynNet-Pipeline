@@ -45,7 +45,7 @@ breaksList <- c(0,0.9,1.58,1.9,10) # Set range #
 #mycolor <- c("white","#E8E8E8","#909090","#303030") # Grey Scale
 mycolor <- c("white","#8FB0D7","#FDC87A","#F70C0E") # Red- Orange- Blue Scale #
 
-d <- vegdist(log2(matrixp+1),method="jaccard") 
+d <- vegdist(log2(matrixp+1),method="jaccard")# binary=T 
 	# method	
 	# Dissimilarity index, partial match to "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", 
 	# "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
