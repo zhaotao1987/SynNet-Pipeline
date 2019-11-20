@@ -10,22 +10,28 @@
 require(igraph)
 args<-commandArgs(TRUE)
 #data <-read.table(args[1],sep='\t',header=F,skip=4)
+
+# Your network should in a two-column edgelist format.
 data <-read.table(args[1],sep=' ',header=F)
+
+# convert edgelist into a undirected graph object
+
 network <- graph.data.frame(data,directed=F)
 
-# net_simple <- simplify(network)
+# simplify command to remove duplicated edges, if exist, error would occur when clustering.
+net_simple <- simplify(network)
 # Write_graph(net_simple,file="simple_network",format=c("ncol"))
 # write_graph(net_simple,file=args[2],format=c("ncol"))
 
 # Kcore Table
 # kc <- coreness(net_simple,mode="all")
 # write.table(kc,args[4],quote=F,sep='\t',row.names=T,col.names=F)
-# Now you want to nodes with a kcore higher than 3
+# You could set a filter here for kcore higher than 3
 
 # Now we do clustering for the network
 # clusters1 <- cluster_louvain(network)
 # clusters2 <- cluster_walktrap(network)
-clusters3 <- cluster_infomap(network)
+clusters3 <- cluster_infomap(net_simple)
 out3 <- as.data.frame(list(names=clusters3$names, mem=clusters3$membership))
 write.table(out3,args[2],quote=F,sep='\t',row.names=F)
 
