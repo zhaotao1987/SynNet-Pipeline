@@ -1,9 +1,10 @@
 
 <p><strong>Update </strong>Feb-19<sup>th</sup>-2021</p>
-<p>&nbsp;</p>
+<p>-------------------------------</p>
+
 <p>Please Refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
-<p>-------------------------------</p>
+<p>&nbsp;</p>
 
 
 <p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
