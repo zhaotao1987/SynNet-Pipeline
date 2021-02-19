@@ -1,3 +1,11 @@
+
+<p><strong>Update </strong>Feb-19<sup>th</sup>-2021</p>
+<p>Please Refer to Wiki for an updated manual</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>-------------------------------</p>
+
+
 <p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
 <p>-------------------------------</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
