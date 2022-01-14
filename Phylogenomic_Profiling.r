@@ -1,3 +1,5 @@
+### Usage:  Rscripts Phylogenomic_Profiling.r Infomap_clustering_result
+
 library(pheatmap)
 library(vegan)
 
@@ -5,7 +7,13 @@ args<-commandArgs(TRUE)
 
 # pre-treatment
   
-data <- read.table(args[1],header=T)  #
+data <- read.table(args[1],header=T)  # Input file is a two-column output from infomap clustering
+## three outputs: input.profiled, input.profiled.clustered, input.profiled.clustered.pdf
+
+file2 <- paste(basename(args[1]), '.profiled',sep="")
+file3 <- paste(basename(args[1]), '.profiled.clustered',sep="")
+file4 <- paste(basename(args[1]), '.profiled.clustered.pdf',sep="")
+
 data$species <- substr(data$names,1,3) # extract first three letters of the gene name as species id
 colnames(data) <-c("Gene","Cluster","Species")
 data <- data[,c(1,3,2)]
@@ -31,7 +39,7 @@ new3 <-new2[-1,]
 
 #out <- out[,myorder]
 
-write.table(new3,args[2],col.names =NA,quote=F) # export output
+write.table(new3,file2,col.names =NA,quote=F) # export output
 	
 # Output sample
 
@@ -57,7 +65,7 @@ f2_m.res <- hclust(d,method="ward.D")
 out2 <- new3[f2_m.res$order,]
 
 # Done 
-write.table(out2,args[3],col.names =NA,quote=F) # export output
+write.table(out2,file3,col.names =NA,quote=F) # export output
 
 # Plot Clusters
 
@@ -69,7 +77,7 @@ write.table(out2,args[3],col.names =NA,quote=F) # export output
           cluster_cols=F,
           main="jaccard+ward.D",
           border_color=NA,
-		  filename = args[3].pdf, 
+		  filename = file4, 
 		  width = 8, height = 8
           )
  #dev.off()
