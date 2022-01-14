@@ -5,7 +5,7 @@ args<-commandArgs(TRUE)
 
 # pre-treatment
   
-data <- read.table(args[1],header=T)  # Sometimes You have to use this one! For problems above ! I dont  know why
+data <- read.table(args[1],header=T)  #
 data$species <- substr(data$names,1,3) # extract first three letters of the gene name as species id
 colnames(data) <-c("Gene","Cluster","Species")
 data <- data[,c(1,3,2)]
