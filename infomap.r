@@ -1,7 +1,7 @@
 #!/usr/bin/Rscript
 # Usage: Rscript myscript.R networkfile(in 2 columns) outputname 
 #
-# The network file should be separated by tab
+# Be aware of the delimit and header in the network file,make changes to Line 15 if needed.
 
 
 # Try if args work.
@@ -12,7 +12,7 @@ args<-commandArgs(TRUE)
 #data <-read.table(args[1],sep='\t',header=F,skip=4)
 
 # Your network should in a two-column edgelist format.
-data <-read.table(args[1],sep=' ',header=F)
+data <-read.table(args[1],sep='\t',header=F)
 
 # convert edgelist into a undirected graph object
 
