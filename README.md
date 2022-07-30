@@ -6,7 +6,7 @@
 <p><a href="https://bioconductor.org/packages/devel/bioc/html/syntenet.html">Bioconductor - syntenet (development version)</a></p>
 <p><a href="https://github.com/almeidasilvaf/syntenet">almeidasilvaf/syntenet: An R package to infer and analyze synteny networks from protein sequences (github.com)</a></p>
 <p>&nbsp;</p>
-<p><strong>Update </strong>Feb-19<sup>th</sup>-2021</p>
+<p><strong>Update </strong>Feb 19, 2021</p>
 
 <p>Please refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
