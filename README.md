@@ -1,8 +1,8 @@
 <h3 style="text-align: left;"><span style="color: #0000ff;"><span style="color: #000000;"><strong>Please refer to <span style="color: #3366ff;"><a style="color: #3366ff;" href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a>&nbsp;</span>for the up-to-date information.</strong></span></span></h3>
 <p style="text-align: left;">&nbsp;</p>
 <p><span style="text-decoration: underline; background-color: #00ff00;"><strong>Update</strong> July 30, 2022</span></p>
-<p>For an easy-use of the main functions of this synteny network construction and analysis pipeline, a R package &lsquo;syntenet&rsquo; has been recently developed, thanks to Fabr&iacute;cio Almeida-Silva et al.</p>
-<p>With it, users can perform synteny detection (MCScanX algorithm implemented in R), network inference, infomap clustering, phylogenomic profiling, and perform synteny cluster-based phylogeny reconstruction.</p>
+<p>For an easy use of the main functions of this synteny network construction and analysis pipeline, you are welcome to try the R package &lsquo;syntenet&rsquo; which has been recently implemented, thanks to Fabr&iacute;cio Almeida-Silva et al.</p>
+<p>With it, users can perform synteny detection (MCScanX algorithm implemented in R), network inference, infomap clustering, phylogenomic profiling, and perform synteny cluster-based phylogeny reconstruction. Everything in R.</p>
 <p><a href="https://bioconductor.org/packages/devel/bioc/html/syntenet.html">Bioconductor - syntenet (development version)</a></p>
 <p><a href="https://github.com/almeidasilvaf/syntenet">almeidasilvaf/syntenet: An R package to infer and analyze synteny networks from protein sequences (github.com)</a></p>
 <p>&nbsp;</p>
