@@ -1,3 +1,5 @@
+<p>&nbsp;</p>
+
 <h4><span style="color: #0000ff;"><span style="color: #000000;"><strong>Please refer to <span style="color: #3366ff;"><a style="color: #3366ff;" href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a>&nbsp;</span>for the up-to-date information.</strong></span></span></h4>
 <p>&nbsp;</p>
 <p><strong>Update</strong> July 30, 2022</p>
@@ -10,9 +12,6 @@
 
 <p>Please Refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-
-
 <p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
 <p>-------------------------------</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
