@@ -1,7 +1,5 @@
-<h3 style="text-align: center;"><span style="color: #0000ff;"><span style="color: #000000;"><strong>Microsynteny Network Construction and Analysis Pipeline</strong></span></span></h3>
-<p>&nbsp;</p>
-<h4><span style="color: #0000ff;"><span style="color: #000000;"><strong>Please refer to <span style="color: #3366ff;"><a style="color: #3366ff;" href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a>&nbsp;</span>for the up-to-date information.</strong></span></span></h4>
-<h3 style="text-align: left;">&nbsp;</h3>
+<h3 style="text-align: left;"><span style="color: #0000ff;"><span style="color: #000000;"><strong>Microsynteny Network Construction and Analysis Pipeline</strong></span></span></h3>
+<p><span style="color: #0000ff;"><span style="color: #000000;"><strong>Please refer to <span style="color: #3366ff;"><a style="color: #3366ff;" href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a>&nbsp;</span>for the up-to-date information.</strong></span></span></p>
 <p><strong>NEWS</strong> July 30, 2022</p>
 <p>For an easy use of the main functions of this synteny network construction and analysis pipeline, you are welcome to try the R package &lsquo;syntenet&rsquo; which has been recently implemented, thanks to Fabr&iacute;cio Almeida-Silva et al.</p>
 <p>With it, users can perform synteny detection (MCScanX algorithm implemented in R), network inference, infomap clustering, phylogenomic profiling, and synteny based phylogeny reconstruction as well (<a href="https://www.nature.com/articles/s41467-021-23665-0">Zhao et al., 2021</a>&nbsp;Nat Commun). Everything in R.</p>
