@@ -133,7 +133,6 @@
 <p>Result in such format can be directly feed into <a id="18ad1ad841f16e47cece99a661b87b8a-a000fa033b7468aff83e27590abc398a024d35cf" class="js-navigation-open" title="Phylogenomic_Profiling.r" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Phylogenomic_Profiling.r">Phylogenomic_Profiling.r</a>&nbsp;This R script can analyze cluster composition, calculate distance, and perform hierarchical clustering. Please read the notes within the codes. Also remember to change the content of Line 22 according to the genomes you are using. </p>
 <p>Usage: <strong>Rscript Phylogenomic_Profiling.r infomap_clustering_result cluster_profiled cluster_profiled_clustered</strong></p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 <p><strong>Update </strong>July 5, 2018</p>
 
