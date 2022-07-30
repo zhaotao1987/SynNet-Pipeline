@@ -10,7 +10,7 @@
 
 <p>Please refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
-<p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
+<p><strong>Update </strong>June 7, 2019</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
 <p>Improved the function enabling parallel running of MCScanX.</p>
 <p>Codes are better organized and explained.</p>
@@ -24,7 +24,7 @@
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L180-L183">Line180-183</a>: detect_collinear_tandem_arrays [inter-species]</p>
 <p>&nbsp;</p>
 
-<p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
+<p><strong>Update</strong> June 3, 2019</p>
 
 <p>Phylogenomic Profiling</p>
 <p>When you have constructed a synteny network database of your interested genomes, you could then perform clustering to the entire network (using infomap algorithm for example), or you could filter out subnetworks first (for certain gene family) and then perform clustering (using infomap, CFinder etc.).</p>
@@ -131,8 +131,8 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<p><strong>UPDATES </strong>5 Jul 2018</p>
-<p>-------------------------------</p>
+<p><strong>Update </strong>July 5, 2018</p>
+
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
 <p><a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-Diamond.sh</a>: Used for the first time, when you would like to construct synteny network of your interested genomes</p>
 <p><a id="4ed55da12c03cc56cf797e8043c3fc61-7a0cebf3bdec62eb02084eeae8d8faaefabeea41" class="js-navigation-open" title="SynetAdding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetAdding-Diamond.sh">SynetAdding-Diamond.sh</a>: Used when you would like to add new genomes into the existing results.</p>
@@ -150,7 +150,7 @@
 <p>&nbsp; &nbsp; &nbsp;- for example:&nbsp; &nbsp; &nbsp; array=(ath osa oth Alyr)&nbsp;</p>
 <p>&nbsp; - The array can be of any length, depending the genomes you want to compare.&nbsp;</p>
 <p>&nbsp;</p>
-=============================================================================
+==========================================================================
 <p>&nbsp;</p>
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
