@@ -4,14 +4,13 @@
 <p>For an easy-use of the main functions of this synteny network construction and analysis pipeline, a R package &lsquo;syntenet&rsquo; has been recently developed, thanks to Fabr&iacute;cio Almeida-Silva et al.</p>
 <p>With it, users can perform synteny detection (MCScanX algorithm implemented in R), network inference, infomap clustering, phylogenomic profiling, and perform synteny cluster-based phylogeny reconstruction.</p>
 <p><a href="https://github.com/almeidasilvaf/syntenet">almeidasilvaf/syntenet: An R package to infer and analyze synteny networks from protein sequences (github.com)</a><br /> <a href="https://bioconductor.org/packages/devel/bioc/html/syntenet.html">Bioconductor - syntenet (development version)</a></p>
+<p>&nbsp;</p>
 
 <p><strong>Update </strong>Feb-19<sup>th</sup>-2021</p>
-<p>-------------------------------</p>
 
-<p>Please Refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
+<p>Please refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
 <p><strong>Update </strong>June-7<sup>th</sup>-2019</p>
-<p>-------------------------------</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
 <p>Improved the function enabling parallel running of MCScanX.</p>
 <p>Codes are better organized and explained.</p>
@@ -27,7 +26,7 @@
 <p>&nbsp;</p>
 
 <p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
-<p>-------------------------------</p>
+
 <p>Phylogenomic Profiling</p>
 <p>When you have constructed a synteny network database of your interested genomes, you could then perform clustering to the entire network (using infomap algorithm for example), or you could filter out subnetworks first (for certain gene family) and then perform clustering (using infomap, CFinder etc.).</p>
 <p>Next, we would like to summarize clusters according to its node compositions. Then we could infer what are the conserved clusters, and what are the specific ones (shared by certain species group for example). A rough description of this process is like this:&nbsp; we first generate a matrix, rows stand for clusters, and columns stand for species, the value stands for the number of nodes of that species in that cluster. Then we calculate a distance matrix between pair-wise clusters, and finally perform hierarchical clustering to cluster similar-patterned clusters.</p>
