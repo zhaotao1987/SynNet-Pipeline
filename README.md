@@ -10,11 +10,11 @@
 <p>&nbsp;</p>
 
 
-<p><strong>Update </strong>Feb 19, 2021</p>
+<p><strong>UPDATE </strong>Feb 19, 2021</p>
 
 <p>Please refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
 <p>&nbsp;</p>
-<p><strong>Update </strong>June 7, 2019</p>
+<p><strong>UPDATE </strong>June 7, 2019</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuild-X.sh">SynetBuild-X.sh</a></p>
 <p>Improved the function enabling parallel running of MCScanX.</p>
 <p>Codes are better organized and explained.</p>
@@ -28,7 +28,7 @@
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L180-L183">Line180-183</a>: detect_collinear_tandem_arrays [inter-species]</p>
 <p>&nbsp;</p>
 
-<p><strong>Update</strong> June 3, 2019</p>
+<p><strong>UPDATE</strong> June 3, 2019</p>
 
 <p>Phylogenomic Profiling</p>
 <p>When you have constructed a synteny network database of your interested genomes, you could then perform clustering to the entire network (using infomap algorithm for example), or you could filter out subnetworks first (for certain gene family) and then perform clustering (using infomap, CFinder etc.).</p>
@@ -134,7 +134,7 @@
 <p>Usage: <strong>Rscript Phylogenomic_Profiling.r infomap_clustering_result cluster_profiled cluster_profiled_clustered</strong></p>
 <p>&nbsp;</p>
 
-<p><strong>Update </strong>July 5, 2018</p>
+<p><strong>UPDATE </strong>July 5, 2018</p>
 
 <p>Here I attach two scripts, using DIAMOND (Buchfink et al., 2015) for faster genome comparisons at the first step.</p>
 <p><a id="3c8ff96e93b59bc039e67f00b8a013cb-a14314394b2d8a850fb73bd4be094b8072f0acce" class="js-navigation-open" title="SynetBuilding-Diamond.sh" href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/SynetBuilding-Diamond.sh">SynetBuilding-Diamond.sh</a>: Used for the first time, when you would like to construct synteny network of your interested genomes</p>
