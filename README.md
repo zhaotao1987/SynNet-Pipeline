@@ -5,7 +5,7 @@
 <p>With it, users can perform synteny detection (MCScanX algorithm implemented in R), network inference, infomap clustering, phylogenomic profiling, and perform synteny cluster-based phylogeny reconstruction.</p>
 <p><a href="https://bioconductor.org/packages/devel/bioc/html/syntenet.html">Bioconductor - syntenet (development version)</a></p>
 <p><a href="https://github.com/almeidasilvaf/syntenet">almeidasilvaf/syntenet: An R package to infer and analyze synteny networks from protein sequences (github.com)</a></p>
-
+<p>&nbsp;</p>
 <p><strong>Update </strong>Feb-19<sup>th</sup>-2021</p>
 
 <p>Please refer to <a href="https://github.com/zhaotao1987/SynNet-Pipeline/wiki">Wiki</a> for an updated manual</p>
@@ -22,7 +22,6 @@
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L127">Line127</a>: duplicate_gene_classifier</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L132">Line132</a>: detect_collinear_tandem_arrays [intra-species]</p>
 <p><a href="https://github.com/zhaotao1987/SynNet-Pipeline/blob/16505cb7d7b96ba7203ecbdcf432ecb1407f7310/SynetBuild-X.sh#L180-L183">Line180-183</a>: detect_collinear_tandem_arrays [inter-species]</p>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 <p><strong>Update</strong> June 3<sup>rd</sup> 2019</p>
@@ -151,7 +150,7 @@
 <p>&nbsp; &nbsp; &nbsp;- for example:&nbsp; &nbsp; &nbsp; array=(ath osa oth Alyr)&nbsp;</p>
 <p>&nbsp; - The array can be of any length, depending the genomes you want to compare.&nbsp;</p>
 <p>&nbsp;</p>
-======================================
+=============================================================================
 <p>&nbsp;</p>
 <h3 style="text-align: center;"><strong>Plant Phylogenomic Synteny Network Construction and Analysis Pipeline</strong></h3>
 <p style="text-align: center;"><strong><img src="https://github.com/zhaotao1987/SynNet-Pipeline/blob/master/Fig-1.jpg" alt="p" width="800" height="700" /><br /></strong></p>
